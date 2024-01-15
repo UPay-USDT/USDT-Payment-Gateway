@@ -14,3 +14,4 @@ runtime/*
 .well-known
 *.user.ini*
 .DS_Store
+.env

@@ -1,4 +1,4 @@
-# Upay (USDT Payment)
+# Upay (USDT Payment Gateway)
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/UPay-USDT/USDT-Payment-Gateway/main/UPay-logo.png" witdh="140" height="140">
@@ -7,7 +7,7 @@
 🇺🇸 [English version](https://github.com/UPay-USDT/USDT-Payment-Gateway/blob/main/README_en.md)
 
 ## 项目简介
-**UPay**（全称：USDT Payment）是一个由<code>PHP语言</code>编写的**USDT**收款代付系统，支持私有化部署，支持<code>TRC20</code>和<code>ERC20</code>网络。
+**UPay**（全称：USDT Payment Gateway）是一个由<code>PHP语言</code>编写的**USDT**收款代付系统，支持私有化部署，支持<code>TRC20</code>和<code>ERC20</code>网络。
 
 UPay 使用 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) 开源协议!
 
