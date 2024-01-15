@@ -13,3 +13,4 @@ app/test/
 runtime/*
 .well-known
 *.user.ini*
+.DS_Store
