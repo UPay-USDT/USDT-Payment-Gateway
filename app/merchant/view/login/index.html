@@ -1,0 +1,255 @@
+
+<link rel="stylesheet" href="__STATIC__/merchant/css/login.css?v={$version}" media="all">
+    <style>
+        body {
+            font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+        }
+
+        .login-main {
+            width: 480px;
+            box-sizing: border-box;
+            background: #fff;
+            border-radius: 20px;
+            padding: 59px 50px 0;
+        }
+
+        .login-main .login-top {
+            background: #fff !important;
+            line-height: 0 !important;
+        }
+
+        .login-title {
+            color: #263237;
+            font-size: 32px;
+            line-height: 28px;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .login-title2 {
+            color: #263237;
+            font-size: 20px;
+            line-height: 18px;
+            font-weight: 500;
+        }
+
+        .login-main .login-bottom .center {
+            width: 380px;
+            margin: 0;
+        }
+
+        .login-main .login-bottom .center .item {
+            width: 380px;;
+        }
+
+        .login-main .login-bottom .tip {
+            margin: 0;
+        }
+
+        .login-main .login-bottom .login-btn {
+            width: 380px;
+            margin: 0;
+        }
+
+        .login-main .login-bottom .login-btn {
+            background: #1D6AFF;
+            border-radius: 10px;
+            height: 56px;
+            width: 380px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+        }
+        .login-main .login-bottom .login-btn-dis{
+            line-height: 56px;
+            background: #CCCCCC;
+        }
+
+        .login-main .login-bottom .tip .login-tip {
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", Tahoma, Arial, sans-serif !important;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        .login-main .login-bottom .tip .forget-password {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+            cursor: pointer;
+        }
+
+
+        .lang-box{
+            position: absolute;
+            right: 60px;
+            top: 30px;
+
+        }
+        .current-lang{
+            color: #FFF;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: 0.14px;
+        }
+        .lang-list{
+            display: none;
+            width: 153px;
+            height: 105px;
+            flex-shrink: 0;
+            border-radius: 20px;
+           overflow: hidden;
+            position: absolute;
+            top: 40px;
+            right: -10px;
+        }
+        .lang-a{
+            padding: 10px 20px 40px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lang-a:hover .lang-list{
+            display: block;
+        }
+        .change-lang-en,.change-lang-cn{
+             opacity: 0.800000011920929;
+            background: rgba(0, 0, 0, 0.78);
+            color: #FFF;
+            text-align: center;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.14px;
+            height: 52px;
+            line-height: 52px;
+        }
+        .change-lang-en:hover,.change-lang-cn:hover{
+            opacity: 1;
+        }
+
+        .lang-a .img{
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+        .i-modal,.new-modal{
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            opacity: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+
+
+
+
+
+
+    </style>
+<div class="lang-box">
+
+    <div href="javascript:;" class="lang-a">
+        <img src="__STATIC__/merchant/images/Frame.svg" class="img" alt="" />
+        <cite class=" current-lang"></cite>
+        <img style="margin-left:8px" src="__STATIC__/merchant/images/arrow-top.svg" alt="" />
+        <div class="lang-list">
+            <div class="change-lang-en" data-title="English" data-icon="fa fa-gears">English
+            </div>
+            <div style="height:1px;background:#fff;width:100%;opacity:0.1">
+
+            </div>
+            <div class="change-lang-cn"  data-title="简体中文" data-icon="fa fa-gears">简体中文
+            </div>
+        </div>
+    </div>
+
+    </div>
+<div class="main-body">
+    <div class="login-main">
+        <div class="">
+            <span class="login-title">{:sysconfig('site','site_name')}</span>
+            <span class="login-title2">{:lang('reg_tip1')}</span>
+
+        </div>
+        <form class="layui-form login-bottom">
+
+            <div class="center">
+
+                <div class="item">
+                    <input type="text"  class="merchantname" name="merchantname" lay-verify="required" placeholder="{:lang('reg_tip2')}" maxlength="24"/>
+                </div>
+
+                <div class="item">
+                    <input type="password"  class="password" name="password" lay-verify="required" placeholder="{:lang('reg_tip3')}" maxlength="20">
+                    <span class="bind-password icon icon-4"></span>
+                </div>
+
+                <div class="item" id="googleauth" style="display: none;">
+                    <span class="icon icon-5"></span>
+                    <input type="text" name="googleauth" placeholder="{:lang('reg_tip4')}" maxlength="24"/>
+                </div>
+
+                {if $captcha == 1}
+                <div id="validatePanel" class="item" style="width: 237px;">
+                    <input class="captcha"  type="text" name="captcha" placeholder="{:lang('reg_tip5')}" maxlength="4">
+                    <img id="refreshCaptcha" class="validateImg" src="{:url('login/captcha')}"
+                         onclick="this.src='{:url(\'login/captcha\')}?seed='+Math.random()">
+                </div>
+                {/if}
+
+            </div>
+            <div class="layui-form-item p-html" style="text-align:center; width:380px;height:100%;margin:0px;">
+                <button  class="login-btn login-btn-act" lay-submit>{:lang('reg_tip6')}</button>
+            </div>
+            <div class="tip">
+
+                <span class="login-tip"><a href="https://upay.ink/" style="color: #1391ff;">{:lang('reg_tip7')}</a></span>
+                <a class="forget-password">{:lang('reg_tip8')}</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+<script type="text/javascript" charset="utf-8">
+let clang = document.cookie.includes('en-us')?'en':'cn'
+
+
+
+
+
+    let msg = "{:lang('reg_tip16')}"
+
+    let currentLang = document.querySelector('.current-lang')
+    currentLang.innerText = clang === 'en'?'English':'简体中文'
+    let langBtnEN = document.querySelector('.change-lang-en')
+    let langBtnCN = document.querySelector('.change-lang-cn')
+
+
+    langBtnEN.onclick = ()=>{
+        if(clang === 'en') return
+        document.cookie = `think_lang=en-us;path=/`
+        location.href = location.href.split('?')[0] + '?lang='+ "en-us"
+        location.reload(true)
+    }
+    langBtnCN.onclick = ()=>{
+        if(clang === 'cn') return
+        document.cookie = `think_lang=zh-cn;path=/`
+        location.href = location.href.split('?')[0] + '?lang='+ "zh-cn"
+        location.reload(true)
+    }
+</script>
+

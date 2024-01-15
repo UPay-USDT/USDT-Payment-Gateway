@@ -1,0 +1,57 @@
+<div class="layuimini-container">
+    <div class="layuimini-main" id="app">
+
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">申请提款</li>
+                
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <form id="app-form" class="layui-form layuimini-form">
+                           <div class="layui-form-item">
+                            <label class="layui-form-label required">链路类型</label>
+                            <div class="layui-input-block">
+                                 <input type="radio" name="chain_type"  value="1" title="TRC20" checked=""> 
+                                <input type="radio" name="chain_type"  value="2" title="ERC20" checked="">
+                            </div>
+                        </div>
+                       
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">提款地址</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="from_address" class="layui-input"  placeholder="请输入提款地址" value=""  lay-verify="required">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">收款地址</label>
+                                <div class="layui-input-block">
+                                <input type="text" name="to_address" class="layui-input"  lay-verify="required" placeholder="请输入收款地址" value="">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">私钥</label>
+                                <div class="layui-input-block">
+                                <input type="text" name="key" class="layui-input"  lay-verify="required" placeholder="请输入私钥" value="">
+                                </div>
+                            </div>
+                             
+                             <div class="hr-line"></div>
+    <div class="layui-card">
+                    <div class="layui-card-header"><i class="fa fa-paper-plane-o icon"></i>说明</div>
+                    <div class="layui-card-body layui-text layadmin-text">
+                        <p>1.提币手续费：5%。</p>
+                    </div>
+                </div>
+                            <div class="hr-line"></div>
+                            <div class="layui-form-item text-center">
+                                <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="/merchant.financial/withdraw" data-refresh="true">确认</button>
+                                <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

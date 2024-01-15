@@ -1,0 +1,152 @@
+   <!--replace css-->
+    <link rel="stylesheet" href="__STATIC__/merchant/css/replaceUI.css" />
+     <style type="text/css" media="all">
+        .order-wrapper{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .low-ml{
+            /*margin-left: 8px;*/
+            margin-top: -1px;
+        }
+        .order-wrapper .order-icon{
+            margin-left: 8px;
+        }
+        .order-a{
+
+            display: flex;
+            justify-content: center;
+             align-items: center;
+            color: #fff;
+            margin-left: 0px;
+        
+        }
+         .order-a:hover{
+            color: #fff;
+        }
+        .order-a img{
+            margin-left: 5px;
+            margin-top: -3px;
+        }
+        
+       
+         .order-wrapper .order-no{
+            
+        }
+        .c-box{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .c-c{
+            width: fit-content;
+            /*max-width: 270px;*/
+            word-break: break-all;
+            white-space: normal;
+            text-align: left;
+            line-height: 20px;
+            padding: 10px 0;
+        }
+         .order-wrapper .order-wran{
+             width: 358px;
+             /*height: 33px;*/
+             text-align: center;
+             line-height: 33px;
+            position: absolute;
+            display: none;
+            top: 30px;
+            right: -171px;
+            color: #fff;
+            border-radius: 8px;
+            background: #f52430;
+            z-index: 999;
+            font-size: 12px;
+            font-weight: 500;
+            font-family: Helvetica;
+        }
+        .order-w-more{
+           
+        }
+        .order-low-more{
+            width: 400px!important;
+            right: -191px!important;
+        }
+        .order-me-more{
+             width: 450px!important;
+            right: -216px!important;
+        }
+        .order-high-more{
+             width: 396px!important;
+            right: -189px!important;
+        }
+        .order-large-more{
+             width: 340px!important;
+            right: -161px!important;
+        }
+
+
+         .order-icon:hover .order-wran{
+            display: block;
+        }
+        
+        .order-wrapper .order-wran::before{
+            position: absolute;
+            top: -3px;
+            right: calc(50% - 7px);
+            content: '';
+            width: 13px;
+            height: 13px;
+            background: #f52430;
+            z-index: 9999;
+            transform: rotate(135deg);
+        }
+        .order-wrapper .order-0::before{
+            background: #00C580;
+        }
+        .order-wrapper .order-20::before{
+            background: #8995a1;
+        }
+        .order-wrapper .order-30::before{
+            background: #e8bc22;
+        }
+        .order-wrapper .order-40::before{
+            background: #ff8038;
+        }
+        .order-wrapper .order-0{
+            background: #00C580;
+        }
+        .order-wrapper .order-20{
+            background: #8995a1;
+        }
+        .order-wrapper .order-30{
+            background: #e8bc22;
+        }
+        .order-wrapper .order-40{
+            background: #ff8038;
+        }
+        
+        .layui-table-cell, .layui-table-tool-panel li{
+            overflow: visible;
+        }
+        .layui-table-body{
+            padding-bottom: 20px;
+        }
+        .layuimini-container .layui-table-tool .layui-btn + .layui-btn{
+            width: fit-content;
+        }
+    </style>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <table id="currentTable" class="layui-table layui-hide"
+               data-auth-add="{:auth('order.order/add')}"
+               data-auth-edit="{:auth('order.order/edit')}"
+               data-auth-budan="{:auth('order.order/budan')}"
+               data-auth-delete="{:auth('order.order/delete')}"
+               data-auth-detail="{:auth('order.order/detail')}"
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>

@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="__STATIC__/index/images/logo.png">
+    <title>Upay</title>
+    <style type="text/css" >
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+        *{
+            padding:0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC",'';
+        }
+       .flex {
+            display: flex;
+        }
+        
+        .fd-r {
+            flex-direction: row;
+        }
+        
+        .fd-c {
+            flex-direction: column;
+        }
+        
+        .fw-w {
+            flex-wrap: wrap;
+        }
+        .cp{
+            cursor: pointer;
+        }
+        
+        .ai-c {
+            align-items: center;
+        }
+        
+        .jc-c {
+            justify-content: center;
+        }
+        
+        .jc-fs {
+            justify-content: flex-start;
+        }
+        
+        .jc-fe {
+            justify-content: flex-end;
+        }
+        
+        .jc-sb {
+            justify-content: space-between;
+        }
+        
+        .jc-sa {
+            justify-content: space-around;
+        }
+            
+        @media screen and (max-width: 1280px) {
+          .top-content {
+            overflow: hidden;
+          }
+        }
+        
+        .copy-r {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 27px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 90px;
+          text-align: center;
+          color: #777777;
+        }
+        
+        .adaptation {
+          width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+        
+        .content {
+          width: 100%;
+          min-width: 1200px;
+          background: #F7F9FC;
+        }
+        
+        .top-pos-img {
+          position: absolute;
+          top: -18px;
+          right: -92px;
+          width: 700px;
+          height: 480px;
+          object-fit: cover;
+        }
+        
+        .top-container {
+          width: 100%;
+          height: 920px;
+          background-image: url("__STATIC__/index/images/main-bg.png");
+          background-size: 100% 100%;
+        }
+        
+        .top-container .top-logo {
+          width: 164px;
+          height: 30px;
+        }
+        
+        .top-container .top-content {
+          width: 1200px;
+          padding: 0 20px;
+          color: #ffffff;
+          margin: 90px auto 0;
+          position: relative;
+          height: 100%;
+          /*overflow: hidden;*/
+        }
+        
+        .top-container .top-text {
+          width: 598px;
+        }
+        
+        .top-container .top-text > div:first-child {
+          font-size: 70px;
+          line-height: 84px;
+          font-weight: 900;
+        }
+        
+        .top-container .top-text > div:nth-child(2) {
+          width: 533px;
+          font-size: 20px;
+          line-height: 32px;
+          font-weight: 500;
+          margin-top: 25px;
+          margin-bottom: 74px;
+          color: #BFD1FF;
+        }
+        
+        .top-container .top-btn-item {
+          margin-right: 16px;
+          text-decoration: none;
+        }
+        
+        .top-container .top-btn-item .demo-btn {
+          background: #FFFFFF;
+          color: #1D6AFF;
+        }
+        
+        .top-container .top-btn-item .contact-btn {
+          width: 215px;
+        }
+        
+        .top-container .top-btn-item .contact-btn img {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }
+        
+        .top-container .common-btn {
+          width: 170px;
+          height: 64px;
+          border: 2px solid #FFFFFF;
+          border-radius: 56px;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 29px;
+          /* identical to box height */
+          background: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #FFFFFF;
+        }
+        .top-header {
+          width: 100%;
+          height: 83px;
+          color: #FFFFFF;
+        }
+        
+        .top-header .demo-btn {
+          width: 94px;
+          height: 40px;
+          border: 2px solid #FFFFFF;
+          font-weight: 600;
+          border-radius: 56px;
+          background: none;
+          margin-right: 15px;
+          color: #FFFFFF;
+        }
+        
+        .advantage-container {
+          width: 1160px;
+          height: 338px;
+        
+          border-radius: 60px;
+          margin: 0 auto;
+          transform: translateY(-179px);
+          padding-top: 45px;
+        }
+        .advantage-container .title {
+          font-size: 40px;
+          line-height: 60px;
+          font-weight: 700;
+          text-align: center;
+          margin-bottom: 40px;
+        }
+        
+        .advantage-container .advantage-item {
+          width: 272px;
+          height: 338px;
+          color: #000000;
+          border-radius: 40px;
+          background: #fff;
+        }
+        
+        .advantage-container .advantage-item .advantage-text {
+          width: 200px;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 154%;
+          text-align: center;
+          letter-spacing: 0.01em;
+        
+          color: #8F9195;
+        }
+        
+        .advantage-container .advantage-item .advantage-title {
+          font-weight: 600;
+          font-size: 22px;
+          line-height: 154%;
+          margin-bottom: 13px;
+          text-align: center;
+          letter-spacing: 0.01em;
+          color: #000000;
+        }
+        
+        .advantage-container .advantage-item img {
+          width: 183px;
+          height: 183px;
+          margin-bottom: 3px;
+          margin-top: 10px;
+        }
+        
+        
+        .bg-img {
+          width: 100%;
+          height: 1210px;
+          background-image: url("__STATIC__/index/images/mid-bg.png");
+        }
+        
+        .demo-container {
+          width: 1160px;
+          padding: 0 20px;
+          height: 493px;
+          margin: 21px auto 0;
+        }
+        .demo-container .demo-title {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 42px;
+          line-height: 59px;
+          margin-bottom: 42px;
+          letter-spacing: 0.01em;
+          color: #000000;
+        }
+        
+        .demo-container .demo-desc {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 32px;
+          margin-bottom: 20px;
+          letter-spacing: 0.01em;
+          color: #8F9195;
+        }
+        .demo-container .demo-desc.w-430 {
+          width: 430px;
+        }
+        
+        .demo-container .demo-desc.w-460 {
+          width: 460px;
+        }
+        
+        
+        .demo-container.mt-158 {
+          margin-top: 130px;
+          margin-bottom: 150px;
+        }
+        
+        .demo-container .demo-img {
+          width: 607px;
+          height: 560px;
+          margin-right: 73px;
+          object-fit: cover;
+        }
+        
+        .demo-container .pay-img {
+          width: 607px;
+          height: 560px;
+          margin-left: 68px;
+        }
+        
+        .work-container {
+          width: 100%;
+          height: 902px;
+          background-repeat: no-repeat;
+          background-size: 100% 902px;
+        }
+        
+        .work-container .work-content {
+          width: 1120px;
+          padding: 111px 15px 0;
+          margin: 0 auto;
+          color: #fff;
+        }
+        
+        .work-container .work-content > div:first-child {
+          margin-bottom: 45px;
+        }
+        
+        .work-container .nft-img {
+          margin-top: 110px;
+          height: 390px;
+          width: 100%;
+          object-fit: cover;
+        }
+        
+        .bg-f5 {
+          background: #fff;
+          height: 1160px;
+        }
+        
+        .platform-container {
+          padding-top: 160px;
+        }
+        .platform-container > div:first-child {
+          margin-bottom: 18px;
+          font-weight: 600;
+          font-size: 44px;
+          line-height: 135%;
+          text-align: center;
+          letter-spacing: 0.01em;
+          color: #FFFFFF;
+        }
+        .platform-container > div:nth-child(2) {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 32px;
+          text-align: center;
+          letter-spacing: 0.01em;
+          color: #B5C9FF;
+        }
+        
+        .platform-container .platform-img {
+          margin-top: 89px;
+          width: 922px;
+          height: 706px;
+        }
+        
+        .partners-container {
+          height: 1160px;
+          padding-top: 175px;
+        
+        }
+        .partners-container > div:first-child {
+          margin-bottom: 156px;
+          font-weight: 600;
+          font-size: 44px;
+          line-height: 135%;
+          text-align: center;
+          letter-spacing: 0.01em;
+          color: #000000;
+        }
+        
+        .partners-container .partner-item {
+          width: 386px;
+          height: 230px;
+          margin-bottom: 120px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+        }
+        
+        .partners-container .partner-item > div:nth-child(2) {
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 170%;
+          margin-top: 42px;
+          margin-bottom: 16px;
+          text-align: center;
+          letter-spacing: 0.01em;
+          color: #000000;
+        }
+        
+        .partners-container .partner-item > div:nth-child(3), .partners-container .partner-item > div:nth-child(4) {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 25px;
+          text-align: center;
+          letter-spacing: 0.01em;
+          color: #8F9195;
+        }
+        
+        
+        .partners-container .partner-img {
+          width: 80px;
+          height: 80px;
+        }
+        
+        .partners-container .partner-item:nth-child(3n) {
+          margin-right: 0;
+        }
+        
+        
+        .bg-f7f9fc {
+          height: 522px;
+          background: #f7f9fc;
+        
+        
+        }
+        .copy-right {
+          padding-top: 90px;
+        }
+        .copy-right > div:first-child {
+          font-weight: 600;
+          font-size: 44px;
+          line-height: 160%;
+          text-align: center;
+          letter-spacing: 0.01em;
+          color: #000000;
+        }
+        
+        .copy-right > div:nth-child(2), .copy-right >div:nth-child(3) {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 32px;
+          text-align: center;
+          letter-spacing: 0.01em;
+          color: #8F9195;
+        }
+        
+        .copy-right > div:nth-child(2) {
+          margin-top: 26px;
+        }
+        
+        .copy-right > div:nth-child(5) {
+          margin-top: 40px;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 120%;
+          display: flex;
+          align-items: center;
+          letter-spacing: 0.01em;
+          color: #1677FF;
+        
+          
+        }
+        .copy-right > div:nth-child(5) img {
+            width: 26px;
+            height: 26px;
+            margin-right: 11px;
+          }
+        
+        .copy-right .demo-btn {
+          width: 236px;
+          height: 74px;
+          left: 714px;
+          top: 303px;
+          border: none;
+          outline: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #1677FF;
+          border-radius: 50px;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 34px;
+          color: #FFFFFF;
+          text-decoration: none;
+        }
+        .copy-right .ip-btn {
+          width: 236px;
+          height: 74px;
+          border: 2px solid #1677FF;
+          outline: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #FFFFFF;
+          border-radius: 50px;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 34px;
+          color: #1677FF;
+          margin-left: 20px;
+          text-decoration: none;
+        }
+        
+        
+        .about-container {
+          width: 720px;
+          height: 541px;
+          background: #FFFFFF;
+          border-radius: 40px;
+          overflow: hidden;
+        }
+        .about-container img {
+          width: 720px;
+          height: 277px;
+          margin-bottom: 60px;
+        }
+        
+        
+        .close-btn {
+          width: 42px !important;
+          height: 42px !important;
+          border-radius: 50%;
+          position: absolute;
+          top: 24px;
+          right: 24px;
+        }
+        
+        .top-concat-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+             width: 97px;
+             height: 40px;
+             font-weight: 600;
+             font-size: 14px;
+             color: #fff;
+             border: 1px solid #fff;
+             border-radius: 20px;
+             background: none;
+             margin-right: 30px;
+        }
+        .link-btn{
+            width: 213px;
+            height: 74px;
+            background: #1677FF;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            /* identical to box height */
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 0.01em;
+            margin: 54px auto 0;
+            color: #FFFFFF;
+        }
+        .link-btn img{
+            width: 34px;
+            height: 34px;
+            margin-right: 12px;
+        }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app">
+          <div class="content">
+    <div class="top-container">
+      <div class="top-header flex jc-sb ai-c">
+        <img src="__STATIC__/index/images/top-logo.svg" class="top-logo cp" alt="">
+        
+              <!--<a href="#" class="top-concat-btn cp">-->
+              <!--  联系我们-->
+              <!--</a>-->
+            </div>
+      <div class="top-content flex">
+        <div class="top-text">
+          <div class="">USDT 支付平台</div>
+          <div>UPay 是专业的 USDT 支付平台，我们致力于为企业和商户提供稳定可靠的收款代付接口，支持波场 USDT、以太坊 USDT，简单易用、安全稳定、不掉单</div>
+          <div class="top-btn-container flex">
+            <a href="https://web.upay.ink/payment" target="_blank" class="top-btn-item">
+              <button class="common-btn demo-btn cp">体验 Demo</button>
+            </a>
+            <a href="https://web.upay.ink/jianjie" target="_blank" class="top-btn-item">
+              <button class="common-btn cp">API 文档</button>
+            </a>
+            
+          </div>
+        </div>
+        <img src="__STATIC__/index/images/main-img.png" class="top-pos-img"  alt="">
+
+      </div>
+    </div>
+    <div class="advantage-container flex jc-sb ai-c">
+      <div class="advantage-item flex fd-c jc-fs ai-c">
+        <img src="__STATIC__/index/images/top-merchant.png" class="img-item" alt="">
+
+        <div class="advantage-title">快速收款</div>
+        <div class="advantage-text">支持API、收银台等快速</div>
+        <div class="advantage-text">USDT收款方式</div>
+      </div>
+      <div class="advantage-item flex fd-c jc-fs ai-c">
+        <img src="__STATIC__/index/images/top-proxy.png" class="img-item" alt="">
+        <div class="advantage-title">资金安全</div>
+        <div class="advantage-text">用户直接付款到商户自己</div>
+        <div class="advantage-text">添加的钱包地址</div>
+      </div>
+      <div class="advantage-item flex fd-c jc-fs ai-c">
+        <img src="__STATIC__/index/images/top-set.png" class="img-item" alt="">
+        <div class="advantage-title">定制服务</div>
+        <div class="advantage-text">个性化功能定制、私有化</div>
+        <div class="advantage-text">部署，数据安全可控</div>
+      </div>
+    </div>
+    <div class="demo-container flex jc-c ai-c">
+      <img src="__STATIC__/index/images/mid-shouyin.png" class="demo-img" alt="">
+      <div>
+        <div class="demo-title">多场景收款</div>
+        <div class="demo-desc w-430">一键调用收款 API，适用所有收款业务场景，让 USDT 收款随时随地。</div>
+        <div class="demo-desc w-430">用户一键即可完成支付，简便易用的支付体验让您获得更多用户青睐。</div>
+      </div>
+    </div>
+    <div class="demo-container flex jc-c ai-c mt-158">
+      <div>
+        <div class="demo-title ta-r">定制化服务</div>
+        <div class="demo-desc ta-r w-460">可灵活定制产品功能，可设置多商户、多管理员，可定制资金账变、订单管理、财务分析等众多功能和权限，打造您专属的收 USDT 平台。</div>
+      </div>
+      <img src="__STATIC__/index/images/mid-set.png" class="pay-img" alt="">
+    </div>
+
+
+    <div class="bg-img">
+      <div class="platform-container adaptation fd-c flex jc-c ai-c ">
+        <div class="ta-c">商户、超管，多角色独立管理后台</div>
+        <div class="ta-c">多角色权限分配，让管理更灵活、透明、安全</div>
+        <img src="__STATIC__/index/images/mid-bg-img.png" class="platform-img" alt="">
+      </div>
+    </div>
+    <div class="bg-f5">
+      <div class="partners-container adaptation">
+        <div class="ta-c">产品特点</div>
+        <div class="partners-box flex jc-fs fw-w ai-c">
+          <div class="partner-item">
+            <img src="__STATIC__/index/images/1.svg" class="partner-img" alt="">
+            <div>超低成本</div>
+            <div>免服务开通费、超低</div>
+            <div>交易手续费，低成本获取高质量服务</div>
+          </div>
+          <div class="partner-item">
+            <img src="__STATIC__/index/images/2.svg" class="partner-img" alt="">
+            <div>匿名收款</div>
+            <div> 杜绝追踪，确保钱包和账户安全</div>
+          </div>
+          <div class="partner-item">
+            <img src="__STATIC__/index/images/3.svg" class="partner-img" alt="">
+            <div>便捷高效</div>
+            <div>跨平台收款更便捷，随时提现USDT</div>
+            <div>高效运转您的资金</div>
+          </div>
+          <div class="partner-item">
+            <img src="__STATIC__/index/images/4.svg" class="partner-img" alt="">
+            <div>定制化服务</div>
+            <div>灵活配置功能权限，资金账变、订单</div>
+            <div>管理、财务分析等一应俱全</div>
+          </div>
+          <div class="partner-item">
+            <img src="__STATIC__/index/images/5.svg" class="partner-img" alt="">
+            <div>安全稳定</div>
+            <div>系统全链路交易数据进行了最高强度</div>
+            <div>的加密处理，确保您的资金安全</div>
+          </div>
+          <div class="partner-item">
+            <img src="__STATIC__/index/images/6.svg" class="partner-img" alt="">
+            <div>7x24 小时服务</div>
+            <div>7x24 小时为您提供专业服务，随时</div>
+            <div>解决所有问题，确保系统安全稳定</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-f7f9fc">
+      <div class="copy-right adaptation">
+        <div>开启你的 USDT 收款</div>
+        <div>轻松简便的接入方式、强大的财务管理功能，安全稳定的一站式 USDT 支付系统，为您带来</div>
+        <div>极致的支付体验并确保您的资金绝对安全。</div>
+        <!--<div class=" flex jc-c ai-c" style="margin-top:55px">-->
+        <!--    <a href="https://web.upay.ink/payment" target="_blank" class="demo-btn cp">体验 Demo</a>-->
+        <!--    <a href="https://web.upay.ink/paymen/jianjie" target="_blank" class="ip-btn cp">API 文档</a>-->
+        <!--</div>-->
+        <a href="https://t.me/UPay_ink" target="_blank" class="jc-c ai-c flex link-btn">
+          <img src="__STATIC__/index/images/7.svg" class="" alt="">
+          <div>@UPay_ink</div>
+        </a>
+      </div>
+    </div>
+    <div class="bg-f2f4f8" style="background: #f2f4f8">
+      <div class="adaptation copy-r">&copy 2023 UPay.ink</div>
+    </div>
+
+
+   
+  </div>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

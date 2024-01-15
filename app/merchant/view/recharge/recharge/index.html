@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>{:sysconfig('site','site_name')} {:lang('reg_tip 36')}</title>
+
+    <link rel="stylesheet" href="__STATIC__/recharge-shouyintai/css/layui.css">
+    <link rel="stylesheet" href="__STATIC__/recharge-shouyintai/css/global.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/recharge-shouyintai/css/header.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/recharge-shouyintai/css/public.css" />
+    <link rel="stylesheet" href="__STATIC__/recharge-shouyintai/css/h5.css" media="screen and (max-width: 568px)">
+    <link rel="stylesheet" href="__STATIC__/recharge-shouyintai/css/min-foot.css" media="screen and (max-width: 568px)">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/recharge-shouyintai/css/pc.css"  media="screen and (min-width: 569px)"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/recharge-shouyintai/css/foot.css" media="screen and (min-width: 569px)"/>
+    <link rel="stylesheet" href="__STATIC__/recharge-shouyintai/css/index.css?v=20200107">
+
+
+    <link rel="stylesheet" type="text/css" href="__STATIC__/recharge-shouyintai/css/blog.css" media="screen and (min-width: 569px)"/>
+    <link rel="stylesheet" href="__STATIC__/recharge-shouyintai/css/min-blog.css" media="screen and (max-width: 568px)">
+
+</head>
+
+<style>
+    body,input{
+        font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+    }
+    body .doc-door {
+        color: #5781FF;
+    }
+    /* common */
+    .this {
+        border: 1px solid #0B5BF5;
+    }
+
+    .u-pay-select{
+        border: 1px solid #0B5BF5!important;
+        color: #0B5BF5;
+    }
+    @media (max-width:767px){
+        .paydemo{
+            background: #FFFFFF;
+            position: relative;
+        }
+
+        .u-wrapper{
+            box-sizing: border-box;
+            width: 100%;
+            background: #FFFFFF;
+            border-radius: 20px;
+            margin: auto;
+            padding:  20px;
+            color: #111;
+        }
+        .u-pay-text{
+            color: red;
+            display: none;
+        }
+
+        .paydemo-type-body{
+            margin-bottom: 33px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .u-select-text{
+            font-size: 18px;
+            line-height: 25px;
+            font-weight: 600;
+            text-align: left;
+            margin-bottom: 17px;
+        }
+        .paydemo-type{
+            flex: 1;
+            height: 50px;
+            border-radius: 10px;
+            margin-bottom: 33px;
+            border: 1px solid #E3E3E3;
+            cursor: pointer;
+        }
+
+        .paydemo-type-body .paydemo-type:first-child{
+            margin-right: 11px;
+        }
+        .paydemo-type-img{
+            width: 22px;
+            height: 22px;
+            margin: 14px 7px 14px 22px;
+        }
+        .u-type-text{
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 500;
+        }
+        .u-paynum-text{
+            font-size: 18px;
+            line-height: 25px;
+            font-weight: 600;
+            margin-bottom: 17px;
+        }
+        .u-pay-num{
+            padding-bottom: 24px;
+            border-bottom: 1px solid #E3E3E3;
+            margin-bottom: 34px;
+        }
+        .pc-flex{
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        .u-pay-item{
+            flex: 1;
+            height: 50px;
+            background: #FFFFFF;
+            border: 1px solid #E3E3E3;
+            border-radius: 10px;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .u-pay-item:nth-child(4){
+            margin-right: 0;
+        }
+        .u-pay-input{
+            box-sizing: border-box;
+            width: 100%;
+            height: 64px;
+            background: #F4F4F4;
+            border-radius: 10px;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: 500;
+            padding-left: 20px;
+        }
+
+        .u-goods-name{
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 500;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .u-refresh-btn{
+            font-size: 12px;
+            line-height: 18px;
+            font-weight: 500;
+            color: #0B5BF5;
+            margin-left: 12px;
+            cursor: pointer;
+        }
+        .u-pay-btn{
+            width: calc(100% - 40px);
+            height: 64px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 16x;
+            line-height: 16px;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            cursor: pointer;
+            background: #0B5BF5;
+            border-radius: 10px;
+            margin-top: 70px;
+        }
+    }
+    @media (min-width:768px){
+        .blog-container{
+            padding-top: 30px;
+        }
+        .u-wrapper{
+            box-sizing: border-box;
+            width: 700px;
+            height: 814px;
+            background: #FFFFFF;
+            border-radius: 20px;
+            margin: auto;
+            padding: 35px 50px 50px;
+            color: #111;
+        }
+        .u-pay-text{
+            font-size: 28px;
+            line-height: 40px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .paydemo-type-body{
+            margin-bottom: 43px;
+        }
+        .u-select-text{
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+        .paydemo-type{
+            display: inline-block;
+            margin-right: 16px;
+            width: 220px;
+            /*height: 64px;*/
+            line-height: 64px;
+            border-radius: 10px;
+            margin-bottom: 42px;
+            border: 1px solid #E3E3E3;
+            cursor: pointer;
+        }
+        .paydemo-type-img{
+            width: 30px;
+            height: 30px;
+            margin: 17px 10px 17px 20px;
+        }
+        .u-type-text{
+            font-size: 16px;
+            line-height: 28px;
+            font-weight: 500;
+        }
+        .u-paynum-text{
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .u-pay-num{
+            padding-bottom: 24px;
+            border-bottom: 1px solid #E3E3E3;
+            margin-bottom: 34px;
+        }
+        .pc-flex{
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .u-pay-item{
+            width: 136px;
+            height: 62px;
+            background: #FFFFFF;
+            border: 1px solid #E3E3E3;
+            border-radius: 10px;
+            margin-right: 15px;
+            margin-bottom: 16px;
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+    &.u-pay-input{
+         margin-bottom: 0!important;
+     }
+    }
+    .u-pay-item:nth-child(4){
+        margin-right: 0;
+    }
+    .u-pay-input{
+        width: 600px;
+        height: 64px;
+        box-sizing: border-box;
+        background: #F4F4F4;
+        border-radius: 10px;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 500;
+        padding-left: 20px;
+    }
+
+    .u-goods-name{
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 500;
+        color: #666666;
+        margin-bottom: 10px;
+    }
+
+    .u-refresh-btn{
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 500;
+        color: #0B5BF5;
+        margin-left: 12px;
+        cursor: pointer;
+    }
+    .u-pay-btn{
+        width: 600px;
+        height: 64px;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        cursor: pointer;
+        background: #0B5BF5;
+        border-radius: 10px;
+        margin-top: 70px;
+    }
+    }
+
+
+    .this.paydemo-type{
+        border: 1px solid #0B5BF5;
+    }
+
+    @media (max-width:420px){
+        .paydemo-type-body{
+            flex-wrap: wrap;
+        }
+        .paydemo-type{
+            width: 100%;
+            flex: none;
+            margin-bottom: 0;
+        }
+        .paydemo-type:first-child{
+            margin-bottom: 20px;
+        }
+
+    }
+
+</style>
+
+<body >
+<div class="page paydemo" style="margin-top:0px;">
+    <script src="__STATIC__/recharge-shouyintai/js/layui.js"></script>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/recharge-shouyintai/css/min-head.css" media="screen and (max-width: 568px)">
+    <div style="display:none" id="formJump"></div>
+    <div class="blog-container" id="container"  >
+
+        <div class="u-wrapper">
+            <div class="u-pay-text">
+                {:sysconfig('site','site_name')} {:lang('reg_tip 36')}
+            </div>
+            <div class="u-select-text">
+                {:lang('reg_tip 37')}
+            </div>
+            <div class="paydemo-type-body">
+                <div class="paydemo-type color-change this" code="1">
+                    <img src="__STATIC__/shouyintai/images/trc.svg" class="paydemo-type-img">
+                    <span class="color-change u-type-text" style="border:none;"> {:lang('reg_tip 12')} (TRC20)</span>
+                </div>
+                <div class="paydemo-type color-change" code="2">
+                    <img src="__STATIC__/shouyintai/images/erc.svg" class="paydemo-type-img">
+                    <span class="color-change u-type-text" style="border:none;"> {:lang('reg_tip 13')} (ERC20)</span>
+                </div>
+            </div>
+            <div class="u-paynum-text">
+                 {:lang('reg_tip 38')} (USDT)
+            </div>
+            <div class="u-pay-num">
+                <div class="pc-flex">
+                    <div class="u-pay-item u-pay-select">100</div>
+                    <div class="u-pay-item">1000</div>
+                    <div class="u-pay-item">5000 </div>
+                    <div class="u-pay-item">50000</div>
+                </div>
+                <input class="u-pay-input u-pay-item" placeholder=" {:lang('reg_tip 39')}" name="u-pay-item" type="text">
+            </div>
+
+            <div class="paydemo-form-item u-goods-name">
+                <label> {:lang('reg_tip 16')}：</label><span id="payMchOrderNo"></span>
+            </div>
+            <div class="u-pay-btn" id="payUSDT">
+                 {:lang('reg_tip 18')} 100 USDT
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<style>
+    .white-link {
+        text-decoration:none;
+        color:  rgba(255,255,255,0.90)
+    }
+    .white-link:hover{color:#1953ff;}
+</style>
+
+
+<script type="text/html" id="tplStatus">
+    {{#  if(d.order_status == 0){ }}
+	<span class="layui-badge layui-bg-blue">{:lang('reg_tip 19')}</span>
+	{{#  } else if(d.order_status == 1){ }}
+	<span class="layui-badge layui-bg-orange">{:lang('reg_tip 20')}</span>
+	{{#  } else if(d.order_status == 2){ }}
+	<span class="layui-badge layui-bg-green">{:lang('reg_tip 21')}</span>
+	{{#  } else if(d.order_status == 3){ }}
+	<span class="layui-badge layui-bg-black">{:lang('reg_tip 22')}</span>
+	{{#  } else if(d.order_status == 4){ }}
+	<span class="layui-badge layui-bg-black">{:lang('reg_tip 23')}</span>
+	{{#  } else if(d.order_status == 5){ }}
+	<span class="layui-badge layui-bg-red">{:lang('reg_tip 24')}</span>
+	{{#  } else if(d.order_status == 6){ }}
+	<span class="layui-badge layui-bg-cyan">{:lang('reg_tip 25')}</span>
+	{{#  } else if(d.order_status == 7){ }}
+	<span class="layui-badge layui-bg-cyan">{:lang('reg_tip 26')}</span>
+	{{#  } else if(d.order_status == 8){ }}
+	<span class="layui-badge layui-bg-cyan">{:lang('reg_tip 27')}</span>
+	{{#  } else{ }}
+	<span></span>
+	{{#  } }}
+</script>
+<script type="text/html" id="tplPayType">
+    {{#  if(d.chain_type == "1"){ }}
+    <span>{:lang('reg_tip 12')}TRC20</span>
+    {{#  } else if(d.chain_type == "2"){ }}
+    <span>{:lang('reg_tip 13')}ERC20</span>
+    {{#  } else{ }}
+    <span></span>
+    {{#  } }}
+</script>
+<script type="text/html" id="tplOP">
+    {{#  if(d.userId && d.status == 2){ }}
+    <btn class="layui-btn layui-btn-xs" lay-event="refund">{:lang('reg_tip 28')}</btn>
+    {{#  } else{ }}
+    <btn class="layui-btn layui-btn-xs layui-btn-disabled">{:lang('reg_tip 28')}</btn>
+    {{#  } }}
+</script>
+<script>
+    var lang1 = document.cookie.includes('en-us')?'en':'cn'
+let obj = {
+	    cn:{
+            'reg_tip29':'支付状态',
+            'reg_tip18':'支付',
+            'reg_tip30':'客户IP',
+            'reg_tip31':'创建时间',
+            'reg_tip32':'自定义金额',
+             'reg_tip14':'支付金额',
+            'reg_tip15':'请输入自定义金额',
+            'reg_tip16':'订单编号',
+            'reg_tip35':'支付方式',
+            'reg_tip72':'收款地址',
+            'reg_tip33':'请输入正确的金额，0-100000之间最多两位小数',
+            'reg_tip34' :'收银台收款',
+            'test1':'请先配置收款地址',
+            'test2':'充值金额不能低于1.00',
+            'test3':'余额不足',
+            'test4':'不能使用收款地址',
+            'test5':'',
+	    },
+	    en:{
+	        'reg_tip29':'Payment status',
+            'reg_tip30':'Client IP',
+            'reg_tip18' : 'Pay ',
+            'reg_tip31':'Creation time',
+            'reg_tip14':'Payment Amount',
+            'reg_tip15':'Please enter a custom amount',
+            'reg_tip16':'Transaction ID',
+            'reg_tip35':'Payment method',
+            'reg_tip72':'Receive Wallet Address',
+            'reg_tip32':'Custom amount',
+            'reg_tip33':'Please enter the correct amount, 0-100000 USDT',
+            'reg_tip34' : 'Payment Link',
+            'test1':'Please set up your receiving address first',
+            'test2':'The recharge amount cannot be less than 100.00',
+            'test3':'Insufficient balance',
+            'test4':' Receiving address cannot be used',
+	    }
+	}
+
+	let filterText = (text)=>{
+	    switch (text) {
+	        case '请先配置收款地址':
+	            text = lang1 === 'en'?obj.en['test1']:obj.cn['test1']
+	            break;
+            case '充值金额不能低于1.00':
+	            text = lang1 === 'en'?obj.en['test2']:obj.cn['test2']
+	            break;
+            case '余额不足':
+	            text = lang1 === 'en'?obj.en['test3']:obj.cn['test3']
+	            break;
+            case '不能使用收款地址':
+	            text = lang1 === 'en'?obj.en['test4']:obj.cn['test4']
+	            break;
+	        case '支付状态':
+	            text = lang1 === 'en'?obj.en['reg_tip29']:obj.cn['reg_tip29']
+	            break;
+             case '收银台收款':
+	            text = lang1 === 'en'?obj.en['reg_tip34']:obj.cn['reg_tip34']
+	            break;
+            case '客户IP':
+	            text = lang1 === 'en'?obj.en['reg_tip30']:obj.cn['reg_tip30']
+	            break;
+            case '创建时间':
+	            text = lang1 === 'en'?obj.en['reg_tip31']:obj.cn['reg_tip31']
+	            break;
+            case '充值金额':
+	            text = lang1 === 'en'?obj.en['reg_tip14']:obj.cn['reg_tip14']
+	            break;
+            case '订单编号':
+	            text = lang1 === 'en'?obj.en['reg_tip16']:obj.cn['reg_tip16']
+	            break;
+            case '支付方式':
+	            text = lang1 === 'en'?obj.en['reg_tip35']:obj.cn['reg_tip35']
+	            break;
+            case '收款地址':
+	            text = lang === 'en'?obj.en['reg_tip72']:obj.cn['reg_tip72']
+	            break;
+	            case '自定义金额':
+	            text = lang1 === 'en'?obj.en['reg_tip32']:obj.cn['reg_tip32']
+	            break;
+             case '请输入正确的金额，0-100000之间最多两位小数':
+	            text = lang1 === 'en'?obj.en['reg_tip33']:obj.cn['reg_tip33']
+	            break;
+            case '支付':
+	            text = lang1 === 'en'?obj.en['reg_tip18']:obj.cn['reg_tip18']
+	            break;
+
+	    }
+	    return text
+	}
+    var usdt_cny="{$usdt_cny}";
+    var usdt_inr="{$usdt_inr}";
+    var usdt_jpy="{$usdt_jpy}";
+    var usdt_krw="{$usdt_krw}";
+    layui.use(['table', 'layer', 'laytpl', 'form'], function() {
+        var $ = layui.$
+            ,table = layui.table
+            ,form = layui.form
+            ,layer = layui.layer;
+
+        var payMchOrderNo = genOrderNo(1000, 9999);
+        $('#payMchOrderNo').text(payMchOrderNo);
+
+
+        // 订单列表
+        table.render({
+            elem: '#PayOrderDemo_dataAll'
+            ,url: '/payment/index/list' //列表接口
+            ,id: 'tableReload'
+            ,page: true
+            ,cols: [[
+               	{field: 'merchant_order_sn', title:filterText('订单编号') , width: 180}
+				,{field: 'pay_usdt', title: filterText('充值金额'), templet: '<div>{{ d.pay_usdt }} USDT</div>', width: 100}
+				,{field: 'chain_type', title: filterText('支付方式'), templet: '#tplPayType', width: 100}
+				,{field: 'address', title: filterText('收款地址') }
+				,{field: 'order_status', title: filterText('支付状态'), templet: '#tplStatus', width: 100}
+				,{field: 'apply_ip', title: filterText('客户IP'), width: 120}
+				,{field: 'create_time', title: filterText('创建时间'), width: 160}
+
+            ]]
+            ,skin: 'line'
+        });
+
+        // 刷新
+        $('#refresh').on('click', function() {
+            table.reload('tableReload', {
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+            });
+        });
+
+        // 随机金额
+        function randomAmount() {
+            var html = ``;
+            for (let i = 0; i<4; i++) {
+                let randomAmount = mathRandom();
+                html += `
+					<input type="radio" name="amountRadio" value="`+randomAmount+`" title="`+randomAmount+`" lay-filter="amountFilter" />
+				`
+            }
+            $("#paydemo-amount").append(`
+				<input type="radio" name="amountRadio" value="1" title="1" lay-filter="amountFilter" checked />`
+                + html +
+                `<input type="radio" name="amountRadio" value="-1" title="${filterText('自定义金额')}" lay-filter="amountFilter" />
+			`);
+        }
+        function mathRandom() {
+            return (Math.random()*(1-0.1) + 0.1).toFixed(2);
+        }
+        randomAmount();
+
+        // 监听金额单选框
+        form.on('radio(amountFilter)', function(data){
+
+            var type=$("input[name='amountType']:checked").val();
+
+            if (type==2) {
+                $("#huilv").text(usdt_cny+" CNY");
+                if (data.value === "-1") {
+                    $("#amountShow").text("");
+                    $("#amountInput").removeClass("layui-hide").focus();
+                    if ($("#amountInput").val()>0) {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_cny).toFixed(2) + ' USDT');
+                    }
+                    $("#amountInput").on('keyup', function () {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_cny).toFixed(2) + ' USDT');
+                    })
+                } else {
+                    $("#amountShow").text(((data.value)/usdt_cny).toFixed(2) + ' USDT');
+                    $("#amountInput").addClass("layui-hide");
+                }
+            }
+            if (type==3) {
+                $("#huilv").text(usdt_inr+" INR");
+                if (data.value === "-1") {
+                    $("#amountShow").text("");
+                    $("#amountInput").removeClass("layui-hide").focus();
+                    if ($("#amountInput").val()>0) {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_inr).toFixed(2) + ' USDT');
+                    }
+                    $("#amountInput").on('keyup', function () {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_inr).toFixed(2) + ' USDT');
+                    })
+                } else {
+                    $("#amountShow").text(((data.value)/usdt_inr).toFixed(2) + ' USDT');
+                    $("#amountInput").addClass("layui-hide");
+                }
+            }
+            if (type==4) {
+                $("#huilv").text(usdt_jpy+" JPY");
+                if (data.value === "-1") {
+                    $("#amountShow").text("");
+                    $("#amountInput").removeClass("layui-hide").focus();
+                    if ($("#amountInput").val()>0) {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_jpy).toFixed(2) + ' USDT');
+                    }
+                    $("#amountInput").on('keyup', function () {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_jpy).toFixed(2) + ' USDT');
+                    })
+                } else {
+                    $("#amountShow").text(((data.value)/usdt_jpy).toFixed(2) + ' USDT');
+                    $("#amountInput").addClass("layui-hide");
+                }
+            }
+            if (type==5) {
+                $("#huilv").text(usdt_krw+" KRW");
+                if (data.value === "-1") {
+                    $("#amountShow").text("");
+                    $("#amountInput").removeClass("layui-hide").focus();
+                    if ($("#amountInput").val()>0) {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_krw).toFixed(2) + ' USDT');
+                    }
+                    $("#amountInput").on('keyup', function () {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_krw).toFixed(2) + ' USDT');
+                    })
+                } else {
+                    $("#amountShow").text(((data.value)/usdt_krw).toFixed(2) + ' USDT');
+                    $("#amountInput").addClass("layui-hide");
+                }
+            }
+            if (type==1) {
+                $("#huilv").text("1 USD");
+                if (data.value === "-1") {
+                    $("#amountShow").text("");
+                    $("#amountInput").removeClass("layui-hide").focus();
+                    if ($("#amountInput").val()>0) {
+                        $("#amountShow").text($("#amountInput").val() + ' USDT');
+                    }
+                    $("#amountInput").on('keyup', function () {
+                        $("#amountShow").text($("#amountInput").val() + ' USDT');
+                    })
+                } else {
+                    $("#amountShow").text(data.value + ' USDT');
+                    $("#amountInput").addClass("layui-hide");
+                }
+            }
+
+        });
+
+        // 监听币种单选框
+        form.on('radio(amountTypeFilter)', function(data){
+
+            var cny_type=$("input[name='amountType']:checked").val();
+            var amount_type=$("input[name='amountRadio']:checked").val();
+
+            if (cny_type==2) {
+                $("#huilv").text(usdt_cny+" CNY");
+                if (amount_type === "-1") {
+                    $("#amountShow").text("");
+                    $("#amountInput").removeClass("layui-hide").focus();
+                    if ($("#amountInput").val()>0) {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_cny).toFixed(2) + ' USDT');
+                    }
+                    $("#amountInput").on('keyup', function () {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_cny).toFixed(2) + ' USDT');
+                    })
+                } else {
+                    $("#amountShow").text(((amount_type)/usdt_cny).toFixed(2) + ' USDT');
+                    $("#amountInput").addClass("layui-hide");
+                }
+            }
+            if (cny_type==3) {
+                $("#huilv").text(usdt_inr+" INR");
+                if (amount_type === "-1") {
+                    $("#amountShow").text("");
+                    $("#amountInput").removeClass("layui-hide").focus();
+                    if ($("#amountInput").val()>0) {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_inr).toFixed(2) + ' USDT');
+                    }
+                    $("#amountInput").on('keyup', function () {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_inr).toFixed(2) + ' USDT');
+                    })
+                } else {
+                    $("#amountShow").text(((amount_type)/usdt_inr).toFixed(2) + ' USDT');
+                    $("#amountInput").addClass("layui-hide");
+                }
+            }
+            if (cny_type==4) {
+                $("#huilv").text(usdt_jpy+" JPY");
+                if (amount_type === "-1") {
+                    $("#amountShow").text("");
+                    $("#amountInput").removeClass("layui-hide").focus();
+                    if ($("#amountInput").val()>0) {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_jpy).toFixed(2) + ' USDT');
+                    }
+                    $("#amountInput").on('keyup', function () {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_jpy).toFixed(2) + ' USDT');
+                    })
+                } else {
+                    $("#amountShow").text(((amount_type)/usdt_jpy).toFixed(2) + ' USDT');
+                    $("#amountInput").addClass("layui-hide");
+                }
+            }
+            if (cny_type==5) {
+                $("#huilv").text(usdt_krw+" KRW");
+                if (amount_type === "-1") {
+                    $("#amountShow").text("");
+                    $("#amountInput").removeClass("layui-hide").focus();
+                    if ($("#amountInput").val()>0) {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_krw).toFixed(2) + ' USDT');
+                    }
+                    $("#amountInput").on('keyup', function () {
+                        $("#amountShow").text((($("#amountInput").val())/usdt_krw).toFixed(2) + ' USDT');
+                    })
+                } else {
+                    $("#amountShow").text(((amount_type)/usdt_krw).toFixed(2) + ' USDT');
+                    $("#amountInput").addClass("layui-hide");
+                }
+            }
+            if (cny_type==1) {
+                $("#huilv").text("1 USD");
+                if (amount_type === "-1") {
+                    $("#amountShow").text("");
+                    $("#amountInput").removeClass("layui-hide").focus();
+                    if ($("#amountInput").val()>0) {
+                        $("#amountShow").text($("#amountInput").val() + ' USDT');
+                    }
+                    $("#amountInput").on('keyup', function () {
+                        $("#amountShow").text($("#amountInput").val() + ' USDT');
+                    })
+                } else {
+                    $("#amountShow").text(amount_type + ' USDT');
+                    $("#amountInput").addClass("layui-hide");
+                }
+            }
+
+        });
+
+        // 切换支付方式
+        $(".paydemo-type").click(function () {
+            $(".color-change").removeClass("this");
+            $(this).addClass("this");
+            $(this).find(".color-change").addClass("this");
+        });
+
+
+        //更改支付金额
+        $(".u-pay-item").click(function () {
+            $(".u-pay-item").removeClass("u-pay-select");
+            $(this).addClass("u-pay-select");
+            let current = document.querySelector('.u-pay-select')
+           	$('#payUSDT').text(filterText('支付')+ `${current.innerText || 0} USDT`)
+        });
+
+        //更改支付金额
+        $('input[name="u-pay-item"]').on('input',function () {
+            let val = $('input[name="u-pay-item"]').val()
+            	$('#payUSDT').text(filterText('支付')+` ${val || 0} USDT`)
+        });
+
+
+        //点击【支付】按钮 事件
+// 		form.on('submit(payment)', function(data){
+
+        //new payment
+        $('#payUSDT').click(()=>{
+
+            let chain_type = $('.this.paydemo-type').attr('code')
+            const amount = ($('.u-pay-select').val() || $('.u-pay-select').text() || 0)*1
+            console.log(amount,'amount')
+            const reg = /^([1-9]\d{0,4}|0)(\.\d{1,2})?$/;
+            if (!amount || !reg.test(amount) || amount <= 0) {
+                layer.msg(filterText('请输入正确的金额，0-100000之间最多两位小数'));
+                return false;
+            }
+
+            var reqData = {};
+            reqData.pay_money = amount;
+            reqData.money_type = '1';
+            reqData.chain_type = chain_type;
+            reqData.recharge_order_sn = payMchOrderNo;
+            reqData.product_name = filterText('充值');
+            reqData.merchant_id = "{$merchant_id}";
+
+            // 条码支付方式需弹窗输入条码，其他支付方式直接请求支付接口
+
+            pay(reqData);
+
+        })
+
+        form.on('submit(payment)', function(data){
+
+            const wayCode = $(".paydemo-type-body").find(".this").eq(0).attr("code");
+
+            const amountRadio = data.field.amountRadio;
+            const type = data.field.amountType;
+            let amount = amountRadio;
+
+            if (amountRadio == "-1") {
+                amount = data.field.amountInput;
+            }
+
+            const reg = /^([1-9]\d{0,4}|0)(\.\d{1,2})?$/;
+            if (!amount || !reg.test(amount) || amount <= 0) {
+                layer.msg(filterText('请输入正确的金额，0-100000之间最多两位小数'));
+                return false;
+            }
+
+            var reqData = {};
+            reqData.pay_money = amount;
+            reqData.money_type = type;
+            reqData.chain_type = wayCode;
+            reqData.order_sn = payMchOrderNo;
+            reqData.product_name = $('#paySubject').text();
+            reqData.merchant_id = "{$merchant_id}";
+            localStorage.setItem('ddd',JSON.stringify(reqData))
+            console.log(reqData,'reqData')
+            // 条码支付方式需弹窗输入条码，其他支付方式直接请求支付接口
+            if (wayCode.endsWith("_BAR")) {
+                let wayDesc = wayCode == "WX_BAR" ? "用户微信条码" : wayCode == "ALI_BAR" ? "用户支付宝条码" : "微信或支付宝条码";
+                layer.open({
+                    title: "条码支付",
+                    type: 1,
+                    area: ['350px', '360px'],
+                    content: '<div style="padding: 20px;">' +
+                        '<div style="padding-bottom: 15px;color: #999999;">请输入'+wayDesc+'：</div>' +
+                        '<div style="display: flex;flex-direction: row;justify-content: space-between"><input type="text" id="authCode" value="" class="layui-input" style="font-size: 14px;width: 210px;" /><button class="layui-btn" id="confirmPay" style="background-color: #1953ff;">确认支付</button></div>' +
+                        '<div style="padding-top: 15px;color: #999999;">或使用(扫码枪/扫码盒)扫码：</div>' +
+                        '<div style="display: flex;flex-direction: row;justify-content: center;padding-top: 20px;"><img src="__STATIC__/recharge-shouyintai/images/payType/demo_scan.png" /></div>' +
+                        '</div>',
+                    success: function(index, layero) {
+                        $("#authCode").focus();
+                        $("#authCode").blur(function () {
+                            $(this).focus();
+                        });
+                        $('#authCode').bind('keyup', function(event) {
+                            if (event.keyCode == "13") { //keyCode=13是回车键
+                                $('#confirmPay').click();
+                            }
+                        });
+                        $('#confirmPay').on('click', function () {
+                            if (!$('#authCode').val()) {
+                                layer.alert('请输入用户条码');
+                                return false;
+                            }
+                            reqData.mchOrderNo = payMchOrderNo;
+                            reqData.authCode = $("#authCode").val();
+                            pay(reqData);
+                        })
+                    },
+                    cancel: function(index, layero) {
+                        updatePayMchOrderNo();
+                    }
+                });
+
+            } else {
+                pay(reqData);
+            }
+
+            return false;
+        })
+
+        // 发起支付
+        function pay(reqData) {
+            var loadingIndex = layer.load(1);
+            $.ajax({
+                url: '/merchant/recharge.recharge/addrechargeorder',
+                data: reqData,
+                type: 'post',
+                success: function (res) {
+
+                    layer.close(loadingIndex);
+                    if(res.code == 1) {
+                        	let data = res.data;
+						let lang = document.cookie.includes('en-us')?'en':'cn'
+						if(data.includes('en_order')){
+						    data = lang === 'en'?data:data.split('en_')[0]+data.split('en_')[1]
+						}else{
+						     data = lang === 'cn'?data:data.split('order')[0] + 'en_order' +data.split('order')[1]
+						}
+
+                        updatePayMchOrderNo();
+                        window.location.href = data;
+
+                    }else {
+                        updatePayMchOrderNo();
+                        layer.msg(filterText(res.msg));
+                    }
+                }, error: function () {
+                    layer.close(loadingIndex);
+                    updatePayMchOrderNo();
+                    layer.alert(filterText(res.msg));
+                }
+            });
+        }
+
+
+
+        // H5  hover弹出二维码
+        $(".paydemo-type-h5").hover(function () {
+            $(this).parent().find(".codeImg_wx_h5").removeClass("layui-hide")
+        }, function () {
+            $(this).parent().find(".codeImg_wx_h5").addClass("layui-hide")
+        })
+
+
+
+        // 更新全局变量payMchOrderNo
+        function updatePayMchOrderNo() {
+            payMchOrderNo = genOrderNo(1000, 9999);
+            $('#payMchOrderNo').text(payMchOrderNo);
+        }
+
+        // 生成订单号
+        function genOrderNo(min, max) {
+            return "RE" + new Date().getTime() + Math.floor(Math.random()*(max-min) + min);
+        }
+
+        form.render();
+    })
+</script>
+</body>
+</html>

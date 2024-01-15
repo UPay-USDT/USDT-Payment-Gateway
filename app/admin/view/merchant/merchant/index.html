@@ -1,0 +1,20 @@
+
+
+<!--replace css-->
+<link rel="stylesheet" href="__STATIC__/admin/css/replaceUI.css" media="all">
+<div class="layuimini-container">
+    <div class="layuimini-main">
+         <div class="top-statics">
+            <div class="top-item">
+                商户总余额:<span class="top-theme-color">{$usdt_balance}USDT</span>
+            </div>
+        </div>
+        <table id="currentTable" class="layui-table layui-hide"
+               data-auth-add="{:auth('merchant.merchant/add')}"
+               data-auth-edit="{:auth('merchant.merchant/edit')}"
+               data-auth-delete="{:auth('merchant.merchant/delete')}"
+               data-auth-editmoney="{:auth('merchant.merchant/editmoney')}"
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>

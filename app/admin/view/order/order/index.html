@@ -1,0 +1,62 @@
+
+
+<!--replace css-->
+<link rel="stylesheet" href="__STATIC__/admin/css/replaceUI.css" media="all">
+<div class="layuimini-container">
+    <div class="layuimini-main">
+    <fieldset id="searchFieldset_currentTableRenderId" class="table-search-fieldset">
+<legend>条件搜索</legend>
+<form class="layui-form layui-form-pane form-search">
+<div class="layui-form-item layui-inline">
+<label class="layui-form-label" style="color: red;">商户订单号</label>
+<div class="layui-input-inline">
+<input id="c-merchant_order_sn" name="merchant_order_sn" data-search-op="%*%" value="" placeholder="请输入商户订单号" class="layui-input">
+</div>
+</div>  
+  <div class="layui-form-item layui-inline">
+<label class="layui-form-label">商户名称</label>
+<div class="layui-input-inline">
+<input id="c-merchantname" name="merchantname" data-search-op="%*%" value="" placeholder="请输入商户名称" class="layui-input">
+</div>
+</div>  <div class="layui-form-item layui-inline">
+<label class="layui-form-label">状态</label>
+<div class="layui-input-inline">
+<select class="layui-select" id="c-order_status" name="order_status" data-search-op="=">
+<option value="">- 全部 -</option> 
+<option value="0">未支付</option>/n<option value="1">已支付</option>/n<option value="2">超时订单</option>/n<option value="3">失败订单</option>/n</select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input type="text" placeholder="- 全部 -" value="" readonly="" class="layui-input layui-unselect" name=""><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="" class="layui-select-tips">- 全部 -</dd><dd lay-value="0" class="">未支付</dd><dd lay-value="1" class="">已支付</dd><dd lay-value="2" class="">超时订单</dd><dd lay-value="3" class="">失败订单</dd></dl></div>
+</div>
+</div>  
+
+
+<div class="layui-form-item layui-inline">
+<label class="layui-form-label">收款地址</label>
+<div class="layui-input-inline">
+<input id="c-address" name="address" data-search-op="%*%" value="" placeholder="请输入收款地址" class="layui-input">
+</div>
+</div>   <div class="layui-form-item layui-inline">
+<label class="layui-form-label">支付时间</label>
+<div class="layui-input-inline">
+<input id="c-pay_time" name="pay_time" data-search-op="range" value="" placeholder="请输入支付时间" class="layui-input" lay-key="1">
+</div>
+</div>  <div class="layui-form-item layui-inline">
+<label class="layui-form-label">订单创建时间</label>
+<div class="layui-input-inline">
+<input id="c-create_time" name="create_time" data-search-op="range" value="" placeholder="请输入订单创建时间" class="layui-input" lay-key="2">
+</div>
+</div>  <div class="layui-form-item layui-inline">
+
+</div><div class="layui-form-item layui-inline" style="margin-left: 115px">
+<button type="submit" class="layui-btn layui-btn-normal" data-type="tableSearch" data-table="currentTableRenderId" lay-submit="" lay-filter="currentTableRenderId_filter"> 搜 索</button>
+<button type="reset" class="layui-btn layui-btn-primary" data-table-reset="currentTableRenderId"> 重 置 </button>
+ </div></form></fieldset>
+        <table id="currentTable" class="layui-table layui-hide"
+               data-auth-add="{:auth('order.order/add')}"
+               data-auth-edit="{:auth('order.order/edit')}"
+               data-auth-delete="{:auth('order.order/delete')}"
+               data-auth-detail="{:auth('order.order/detail')}"
+               data-auth-modifyorderstatus="{:auth('order.order/modifyorderstatus')}"
+               data-auth-editmoney="{:auth('order.order/editmoney')}"
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>
