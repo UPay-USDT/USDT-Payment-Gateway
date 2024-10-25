@@ -1,0 +1,130 @@
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }   /*去掉input等聚焦时的蓝色边框*/
+ul, ol, li { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0; vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙，或者用display：block也可以*/
+table { border-collapse:collapse; }
+body {
+ background-color:#fff;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,"PingFang SC","Helvetica Neue", Helvetica,  "Hiragino Sans GB", "Microsoft YaHei",SimSun, sans-serif;
+}
+.clearfix:before,.clearfix:after {/*清楚浮动*/
+ content:"";
+ display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{*zoom:1;/*IE/7/6*/}
+p{line-height: 28px;}
+
+s,i,em{font-style:normal;text-decoration:none;}
+html {font-size: 14px;}
+/* flex布局  space-between*/
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
+/* flex横排布局 正向*/
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+/* flex横排布局 反向*/
+.flex-row-re {
+	display: flex;
+	flex-direction: row-reverse;
+}
+/* flex竖排布局 */
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+/*align-self: flex-end  */
+.self-end {
+	align-self: flex-end;
+}
+/* 蓝底白字 */
+.back-white {
+	border: 1px solid #1953ff;
+	background-color: #1953ff;
+	border-radius: 5px;
+	color: #fff;
+}
+/* 蓝边蓝字 */
+.border-blue {
+	border: 1px solid #1953ff;
+	border-radius: 5px;
+	color:#1953FF
+}
+
+/* 蓝色字体 */
+.blue-text {
+	color: #1953FF
+}
+/* 灰色字体 */
+.grey {
+	color: #838c99
+}
+/* 文字居中 */
+.center {
+	text-align:center
+}
+/* h1~h6 */
+.h1, .h2, .h3, .h4{font-weight: 800; }
+.h1 {
+	font-size: 60px;
+}
+.h2 {
+	font-size: 30px;
+}
+.h3 {
+	font-size: 25px;
+}
+.h4 {
+	font-size: 20px;
+}
+.h5 {
+	font-size: 16px;
+}
+/* 外边距向下 */
+.mg-b-10 {
+	margin-bottom:10px;
+} 
+.mg-b-20 {
+	margin-bottom:20px;
+} 
+.mg-b-30 {
+	margin-bottom:30px;
+} 
+.mg-b-50 {
+	margin-bottom:50px;
+}
+.mg-b-70 {
+	margin-bottom:70px;
+}
+.mg-b-100 {
+	margin-bottom:100px;
+}
+
+/* 外边距向左 */
+.mg-l-10 {
+	margin-left:10px;
+} 
+/* 外边距向右 */
+.mg-r-10 {
+	margin-right:10px;
+} 
+
+.only-index-block {
+	display:none;
+}
+.no-warp {
+	white-space: nowrap
+}
+.els {
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap
+}

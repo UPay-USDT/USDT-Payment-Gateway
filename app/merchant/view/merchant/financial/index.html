@@ -1,0 +1,14 @@
+   <!--replace css-->
+    <link rel="stylesheet" href="__STATIC__/merchant/css/replaceUI.css" />
+
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <table id="currentTable" class="layui-table layui-hide"
+               data-auth-add="{:auth('user.bank/add')}"
+               data-auth-edit="{:auth('user.bank/edit')}"
+               data-auth-delete="{:auth('user.bank/delete')}"
+               data-auth-detail="{:auth('user.bank/detail')}"
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>

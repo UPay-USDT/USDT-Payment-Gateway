@@ -1,0 +1,97 @@
+<!--replace css-->
+<link rel="stylesheet" href="__STATIC__/admin/css/configUI.css" media="all">
+<div class="layuimini-container">
+    <div class="layuimini-main" id="app">
+
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">风控配置</li>
+
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <form id="app-form" class="layui-form layuimini-form">
+                            <div class="layui-form-item cpt-flex">
+                                <label class="layui-form-label required ">商户默认费率</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="merchant_rate" class="layui-input"  placeholder="请输入商户默认费率" value="{:sysconfig('riskconfig','merchant_rate')}"  lay-verify="required">
+                                     <tip style="color: red;">注：收款费率为千分位，例如：千分之三则填0.003</tip>
+                                </div>
+                            </div>
+                            <div class="layui-form-item cpt-flex">
+                                <label class="layui-form-label required">TRC20提现手续费</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="withdraw_poundage" class="layui-input"  placeholder="请输入TRC20提现手续费" value="{:sysconfig('riskconfig','withdraw_poundage')}"  lay-verify="required">
+                                    <tip>单位：USDT，按笔收费</tip>
+                                </div>
+                            </div>
+                            <div class="layui-form-item  cpt-flex">
+                                <label class="layui-form-label required">ERC20提现手续费</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="erc_withdraw_poundage" class="layui-input"  placeholder="请输入ERC20提现手续费" value="{:sysconfig('riskconfig','erc_withdraw_poundage')}"  lay-verify="required">
+                                    <tip>单位：USDT，按笔收费</tip>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item cpt-flex">
+                                <label class="layui-form-label required">订单最小金额</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="pay_min_money" class="layui-input"  placeholder="请输入订单单笔最小金额" value="{:sysconfig('riskconfig','pay_min_money')}"  lay-verify="required">
+                                    <tip>单位：USDT</tip>
+                                </div>
+                            </div>
+                            <div class="layui-form-item cpt-flex">
+                                <label class="layui-form-label required">订单最大金额</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="pay_max_money" class="layui-input"  placeholder="请输入订单单笔最大金额" value="{:sysconfig('riskconfig','pay_max_money')}"  lay-verify="required">
+                                    <tip>单位：USDT</tip>
+                                </div>
+                            </div>
+                            <div class="layui-form-item cpt-flex">
+                                <label class="layui-form-label required">代付最小金额</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="df_min_money" class="layui-input"  placeholder="请输入代付单笔最小金额" value="{:sysconfig('riskconfig','df_min_money')}"  lay-verify="required">
+                                    <tip>单位：USDT</tip>
+                                </div>
+                            </div>
+                            <div class="layui-form-item cpt-flex">
+                                <label class="layui-form-label required">代付最大金额</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="df_max_money" class="layui-input"  placeholder="请输入代付单笔最大金额" value="{:sysconfig('riskconfig','df_max_money')}"  lay-verify="required">
+                                    <tip>单位：USDT</tip>
+                                </div>
+                            </div>
+                            <div class="layui-form-item cpt-flex">
+                                <label class="layui-form-label">订单超时时间</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="time_out" class="layui-input"  placeholder="请输入订单超时时间" value="{:sysconfig('riskconfig','time_out')}"  lay-verify="required">
+                                    <tip>单位：分钟</tip>
+                                </div>
+                            </div>
+                            <div class="layui-form-item cpt-flex">
+                                <label class="layui-form-label">TRX转账最低能量</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="min_trx" class="layui-input"  placeholder="请输入TRX转账最低能量" value="{:sysconfig('riskconfig','min_trx')}"  lay-verify="required">
+                                    <tip>单位：trx</tip>
+                                </div>
+                            </div>
+                            <div class="layui-form-item cpt-flex">
+                                <label class="layui-form-label">ETH转账最低能量</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="min_eth" class="layui-input"  placeholder="请输入ETH转账最低能量" value="{:sysconfig('riskconfig','min_eth')}"  lay-verify="required">
+                                    <tip>单位：eth</tip>
+                                </div>
+                            </div>
+
+                            <div class="hr-line"></div>
+                            <div class="layui-form-item text-center">
+                                <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="/system.config/save" data-refresh="false">确认</button>
+                                <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm reset-bg">重置</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

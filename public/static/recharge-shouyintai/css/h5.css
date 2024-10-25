@@ -1,0 +1,28 @@
+.hidden {
+	display: none !important;
+}
+.hcenter {
+	text-align: center;
+}
+.about-jee{
+	width: 100%;
+	background-image: url(../image/016.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	color:#fff;
+	box-sizing:border-box;
+	padding:20px;
+}
+.height {
+	height:0
+}
+
+/* align-items 居中对齐 */
+.align-center {
+	display: flex;
+	align-items: center;
+}
+
+#to-top {
+	display: none !important;
+}

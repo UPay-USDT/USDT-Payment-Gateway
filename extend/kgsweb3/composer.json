@@ -1,0 +1,25 @@
+{
+    "name": "kgs/web3",
+    "description": "A simple encapsulation of Web3 framework in PHP environment.\n",
+    "type": "library",
+    "keywords": ["eth", "web3", "contract", "sign", "usdt", "dai"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yukaige",
+            "email": "yukaige@yukaige.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Web3\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "PHP": "^7.0|^8.0",
+        "kornrunner/keccak": "^1.0",
+        "simplito/elliptic-php": "^1.0",
+        "guzzlehttp/guzzle": "^6.0|^7.0"
+    }
+}

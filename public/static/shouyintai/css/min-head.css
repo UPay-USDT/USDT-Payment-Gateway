@@ -1,0 +1,36 @@
+
+#head .tielt-all {
+	width:100vw;
+	box-sizing:border-box;
+	height:80px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content:space-between ;
+	padding:0 20px;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+}
+.h5-head-uls {
+	width:100vw;
+	box-sizing:border-box;
+	background-color: rgba(247, 248, 252, 0.9);
+	position: absolute;
+	top:80px;
+	left:0;
+	z-index: 10;
+}
+.h5-head-uls li {
+	padding:20px 0; 
+	text-align: center;
+	font-size:17px;
+	font-weight: 600;
+}
+.h5-head-uls li a{
+	display: inline-block;
+	width:100%;
+	color:#4D4766;
+}
+.h5-head-hidden {
+	overflow: hidden;
+	transition:all .3s;
+}

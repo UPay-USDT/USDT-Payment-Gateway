@@ -1,0 +1,39 @@
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label required">应用规则</label>
+            <div class="layui-input-block">
+
+                <input v-model="riskconfig_type" type="radio" name="riskconfig_type" lay-filter="riskconfig_type" value="0" title="系统规则" {if $row.riskconfig_type==0}checked=""{/if}>
+                <input v-model="riskconfig_type" type="radio" name="riskconfig_type" lay-filter="riskconfig_type" value="1" title="个人规则" {if $row.riskconfig_type==1}checked=""{/if}>
+
+            </div>
+        </div>
+
+        <div class="layui-form-item" v-if="riskconfig_type == 1" v-cloak>
+            <label class="layui-form-label required">单笔最大金额</label>
+            <div class="layui-input-block">
+                <input type="text" name="single_max_money" class="layui-input"  placeholder="请输入单笔最大金额" value="{$row.single_max_money|default=''}" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-form-item" v-if="riskconfig_type == 1" v-cloak>
+            <label class="layui-form-label required">单日总金额</label>
+            <div class="layui-input-block">
+                <input type="text" name="day_max_money" class="layui-input"  placeholder="请输入单日总金额" value="{$row.day_max_money|default=''}" lay-verify="required">
+            </div>
+        </div>
+         <div class="layui-form-item" v-if="riskconfig_type == 1" v-cloak>
+            <label class="layui-form-label required">保证金比例(%)</label>
+            <div class="layui-input-block">
+                <input type="text" name="baozhengjin_percent" class="layui-input"  placeholder="请输入保证金比例,比如：80" value="{$row.baozhengjin_percent|default=''}" lay-verify="required">
+            </div>
+        </div>
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

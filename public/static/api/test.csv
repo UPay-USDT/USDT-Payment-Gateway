@@ -1,0 +1,83 @@
+array(1) {
+  [0]=>
+  array(39) {
+    ["id"]=>
+    int(61373)
+    ["merchant_id"]=>
+    int(228)
+    ["merchantname"]=>
+    string(8) "shanghu1"
+    ["appid"]=>
+    string(8) "shanghu1"
+    ["plat_order_sn"]=>
+    string(22) "PO20210704164815374877"
+    ["out_order_sn"]=>
+    NULL
+    ["merchant_order_sn"]=>
+    string(14) "16253885268247"
+    ["pay_money"]=>
+    string(6) "300.00"
+    ["merchant_rate"]=>
+    string(6) "0.0060"
+    ["merchant_money"]=>
+    string(6) "298.20"
+    ["poundage"]=>
+    string(4) "1.80"
+    ["plat_money"]=>
+    NULL
+    ["pay_type"]=>
+    string(13) "BanktoBankSms"
+    ["pay_time"]=>
+    NULL
+    ["pay_notifyurl"]=>
+    string(4) "2222"
+    ["pay_callbackurl"]=>
+    string(4) "2222"
+    ["order_status"]=>
+    int(0)
+    ["product_name"]=>
+    string(4) "2222"
+    ["product_desc"]=>
+    string(4) "2222"
+    ["product_num"]=>
+    int(0)
+    ["apply_ip"]=>
+    string(12) "125.70.0.194"
+    ["notice_num"]=>
+    int(0)
+    ["attach"]=>
+    string(4) "2222"
+    ["last_notify_time"]=>
+    int(11)
+    ["type"]=>
+    int(0)
+    ["notice_status"]=>
+    int(0)
+    ["remark"]=>
+    NULL
+    ["user_id"]=>
+    int(291)
+    ["username"]=>
+    string(8) "mashang1"
+    ["user_money"]=>
+    string(4) "1.80"
+    ["pay_username"]=>
+    string(4) "2222"
+    ["bank_id"]=>
+    int(103)
+    ["receive_bankname"]=>
+    string(12) "中国银行"
+    ["receive_accountname"]=>
+    string(7) "3653636"
+    ["receive_cardnumber"]=>
+    string(8) "16516156"
+    ["is_pause"]=>
+    int(1)
+    ["create_time"]=>
+    string(19) "2021-07-04 16:48:15"
+    ["update_time"]=>
+    string(19) "2021-07-04 16:48:15"
+    ["delete_time"]=>
+    NULL
+  }
+}

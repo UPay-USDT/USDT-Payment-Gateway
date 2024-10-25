@@ -1,0 +1,15 @@
+
+/* display:none */
+.none {
+	display:none !important;
+}
+
+.mg-b-300 {
+	margin-bottom:300px;
+} 
+.mg-t-50 {
+	margin-top:50px;
+}
+.only-index-none {
+	display: none;
+}
