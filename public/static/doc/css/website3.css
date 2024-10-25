@@ -1,0 +1,10 @@
+*{-webkit-font-smoothing: antialiased;cursor:default;}
+.normal,.markdown-section{font-size:80%;}
+.divider,.book-search-input,.custom-link{display:none !important;}
+section{font-size:14px !important;}
+img{max-width: 300px !important;border: 1px solid #9e9e9e!important;padding: 2px!important;}
+a:hover{color:#008cff !important;}
+a{text-decoration:none !important;}
+th{min-width:100px !important;}
+.gitbook-link{margin-top:20px;color: #ccc !important;font-size:12px !important;}
+.book-summary ul.summary li {list-style: none;line-height: 14px;}

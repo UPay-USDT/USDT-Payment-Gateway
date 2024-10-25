@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Pay Result</title>
+
+    <link rel="stylesheet" href="__STATIC__/payment/weui.min.css">
+
+    <link rel="stylesheet" href="__STATIC__/payment/base.css">
+        <style type="text/css">
+            .weui-btn-area,.weui-btn_primary{
+                box-sizing: border-box;
+                width: 335px!important;
+                height: 50px!important;
+                background: #0B5BF5;
+                border-radius: 10px;
+                margin: 44px auto 0;
+            }
+            .weui-msg__title{
+                text-align: center;
+                height: 25px;
+                left: 788px;
+                top: 188px;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 25px;
+                letter-spacing: -0.333333px;
+                color: #000000;
+            }
+            .weui-msg__text-area{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .weui-icon_msg{
+                font-size: 60px;
+
+            }
+            .weui-msg{
+                padding-top: 100px;
+            }
+    </style>
+
+
+</head>
+<body>
+
+<div class="page msg_warn js_show">
+    <div class="weui-msg">
+        <div class="weui-msg__icon-area">
+              {if $data == 'Order paid'}
+                    <img src="__STATIC__/payment/succ.svg" alt="" style="width:60px;height:60px" />
+                {else}
+                    <img src="__STATIC__/payment/fail.svg" style="width:60px;height:60px" alt="" />
+                {/if}
+        </div>
+        <div class="weui-msg__text-area">
+            <h2 class="weui-msg__title">{$data}</h2>
+            <p class="weui-msg__desc"></p>
+        </div>
+        <div class="weui-msg__opr-area">
+            <p class="weui-btn-area">
+                {if empty($callback_url)}
+                    <a href="/payment" class="weui-btn weui-btn_primary">return</a>
+                {else}
+                    <a href="{$callback_url}" class="weui-btn weui-btn_primary">return</a>
+                {/if}
+
+
+            </p>
+        </div>
+        <div class="weui-msg__extra-area">
+            <div class="weui-footer">
+                <p class="weui-footer__links">
+                    <a href="javascript:void(0);" class="weui-footer__link"></a>
+                </p>
+                <p class="weui-footer__text"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

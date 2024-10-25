@@ -1,0 +1,121 @@
+
+<!--replace css-->
+<link rel="stylesheet" href="__STATIC__/admin/css/replaceUI.css" media="all">
+<style type="text/css">
+    .layuimini-container .layui-btn-success{
+        width: auto;
+    }
+    .layui-layer-dialog .layui-layer-content .layui-layer-ico{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -20px;
+    }
+    .layui-layer-dialog .layui-layer-content{
+        padding: 20px 20px 30px 32px
+    }
+    .top-statics{
+        border: none;
+        background: none;
+        border-radius: none;
+    }
+    .static-box{
+        padding: 30px   ;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        
+        color: #000000;
+    }
+    .top-theme-color{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        
+        color: #00AF90;
+    }
+    @media (max-width:500px){
+       .item-box{
+           display: inline-block;
+           width: 100%;
+           height: 93px;
+           border-radius: 10px;
+           padding: 18px 30px;
+           box-sizing: border-box;
+           background: #f3f4f6;
+       } 
+      
+    }
+    @media (max-width:960px) and (min-width:501px){
+       .item-box{
+           display: inline-block;
+           width: calc(100%/2 - 12px);
+           height: 93px;
+            border-radius: 10px;
+           padding: 18px 30px;
+           box-sizing: border-box;background: #f3f4f6;margin-right: 20px;
+           margin-bottom: 20px;
+       } 
+       .static-box .item-box:nth-child(2){
+           margin-right: 0;
+       }
+       .static-box .item-box:nth-child(3){
+           margin-bottom: 0;
+       }
+    }
+    @media (min-width:961px){
+       .item-box{
+           display: inline-block;
+           width: calc(100%/3 - 16.3px);
+           height: 93px;
+            border-radius: 10px;
+           padding: 18px 30px;
+           box-sizing: border-box;
+           background: #f3f4f6;margin-right: 20px;
+       } 
+       .static-box .item-box:nth-child(3){
+           margin-right: 0;
+       }
+    }
+    
+    
+</style>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <div class="static-box">
+            <div class="item-box">
+                <div class="">
+                     USDT总余额:<span class="top-theme-color">{$erc_usdt_balance + $trc_usdt_balance}</span>
+                </div>
+            </div>
+            <div class="item-box">
+               <div class="" style="margin-bottom:13px">
+                     USDT(TRC20)总余额:<span class="top-theme-color">{$trc_usdt_balance} </span>
+                </div>
+                <div class="">
+                     USDT(ERC20)总余额:<span class="top-theme-color">{$erc_usdt_balance}  </span>
+                </div>
+            </div>
+            <div class="item-box">
+                <div class="" style="margin-bottom:13px">
+                     TRX总余额:<span class="top-theme-color">{$trx_balance}  </span>
+                </div>
+                <div class="">
+                     ETH总余额:<span class="top-theme-color">{$eth_balance}  </span>
+                </div>
+            </div>
+        </div>
+        
+     
+        <table id="currentTable" class="layui-table layui-hide"
+               data-auth-add="{:auth('address.address/add')}"
+               data-auth-gengxin="{:auth('address.address/gengxin')}"
+               data-auth-delete="{:auth('address.address/delete')}"
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+/.idea
+/.vscode
+*.log
+config/install/lock/install.lock
+/public/upload
+/public/docs
+public/conf
+public/phpqrcode
+public/WowOss.exe
+app/index/controller/Test.php
+composer.phar
+app/test/
+runtime/*
+.well-known
+*.user.ini*
+.DS_Store
+.env

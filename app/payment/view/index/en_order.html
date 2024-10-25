@@ -1,0 +1,517 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <meta name="renderer" content="webkit">
+        <meta name="HandheldFriendly" content="True"/>
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link rel="shortcut icon" href="__STATIC__/payment/favicon.ico" />
+        <title>
+
+                {:sysconfig('site','site_name')}
+
+            Cashier
+        </title>
+
+        <style>
+            body,input{
+    font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+}
+
+
+            @media (max-width:500px){
+                                .u-pay-box{
+                    width: 335px;
+                    margin: 22px auto 0;
+                    color: #000000;
+                }
+
+                .u-pay-content{
+                    width: 335px;
+                    padding-bottom: 20px;
+                    background: #FFFFFF;
+                    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+                    border-radius: 20px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-direction: column;
+                    margin-bottom: 24px;
+                }
+                .u-top-tip{
+                    width: 315px;
+                    box-sizing: border-box;
+                    text-align: center;
+                    padding: 10px 14px;
+                    font-size: 14px;
+                    line-height: 18px;
+                    font-weight: 500;
+                    background: #FFAB48;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #FFFFFF;
+                    margin-bottom: 16px ;
+                    margin-top: 10px;
+                }
+                .u-count-box{
+                    font-size: 14px!important;
+                    line-height: 20px!important;
+                    font-weight: 500;
+                    color: #000000;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 24px;
+                }
+                ul.downcount li span,ul.downcount li{
+                    font-size: 14px!important;
+                    line-height: 20px!important;
+                    font-weight: 500;
+                    color: #0B5BF5;
+                }
+
+                .u-count-text{
+                    margin-left: 10px;
+                }
+                ul.downcount {
+                   list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    display: block;
+                    text-align: center;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+
+                .amount{
+                    font-size: 26px!important;
+                    line-height: 30px!important;
+                    font-weight: 700;
+                    color: #111;
+                    cursor: pointer;
+                }
+
+                .u-click-copy{
+                    font-size: 11px;
+                    line-height: 14px;
+                    font-weight: 400;
+                    margin-bottom: 20px;
+                    color: #999;
+                }
+
+                .qrcode,.qrcode-img{
+                    width: 170px;
+                    height: 170px;
+                }
+                .u-pay-info{
+                    width: calc(100% - 40px);
+                    padding-bottom: 15px;
+                    background: #F5F5F5;
+                    border-radius: 12px;
+                    margin-top: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+                .u-info-text{
+                    font-size: 14px;
+                    line-height: 18px;
+                    font-weight: 500;
+                    color: #666;
+                    text-align: center;
+                    margin-bottom: 10px;
+                    margin-top: 12px;
+                }
+                .u-info-address{
+                    width: 255px;
+                    word-break: break-word;
+                    font-size: 14px;
+                    line-height: 16px;
+                    font-weight: 500;
+                    color: #111;
+                    text-align: center;
+                    margin-bottom: 9px;
+                    cursor: pointer;
+                }
+                .u-info-copy{
+                     font-size: 11px;
+                    line-height: 14px;
+                    font-weight: 400;
+                    color: #999;
+                     text-align: center;
+                }
+                .u-tips-title{
+                    color: #111111;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 20px;
+                    text-align: center;
+                    margin-bottom: 16px;
+                }
+                .u-tips-tC{
+                    color: #0B5BF5;
+                    font-size: 16px;
+                }
+                .u-t-title{
+                     font-weight: 500;
+                    font-size: 16px;
+                    line-height: 28px;
+                    color: #666666;
+                    margin-bottom: 10px;
+                }
+                .u-tips-content{
+                    width: 335px;
+                }
+                .u-tips-item{
+                    word-break: break-word;
+                     font-weight: 500;
+                    font-size: 12px;
+                    line-height: 26px;
+                }
+            }
+            @media (min-width:501px){
+                .u-pay-box{
+                    width: 400px;
+                    margin: 30px auto 0;
+                    color: #000000;
+                }
+
+                .u-pay-content{
+                    width: 400px;
+                    padding-bottom: 20px;
+                    background: #FFFFFF;
+                    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+                    border-radius: 20px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-direction: column;
+                    margin-bottom: 33px;
+                }
+                .u-top-tip{
+                    width: 360px;
+                    box-sizing: border-box;
+                    text-align: center;
+                    padding: 10px 14px;
+                    /*height: 40px;*/
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-weight: 500;
+                    background: #FFAB48;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #FFFFFF;
+                    margin-bottom: 30px ;
+                    margin-top: 20px;
+                }
+                .u-count-box{
+                    font-size: 14px!important;
+                    line-height: 20px!important;
+                    font-weight: 500;
+                    color: #000000;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 24px;
+                }
+                ul.downcount li span,ul.downcount li{
+                    font-size: 14px!important;
+                    line-height: 20px!important;
+                    font-weight: 500;
+                    color: #0B5BF5;
+                }
+
+                .u-count-text{
+                    margin-left: 10px;
+                }
+                ul.downcount {
+                   list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    display: block;
+                    text-align: center;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+
+                .amount{
+                    font-size: 26px!important;
+                    line-height: 30px!important;
+                    font-weight: 700;
+                    color: #111;
+                    cursor: pointer;
+                }
+
+                .u-click-copy{
+                    font-size: 11px;
+                    line-height: 14px;
+                    font-weight: 400;
+                    margin-bottom: 20px;
+                    color: #999;
+                }
+
+                .qrcode,.qrcode-img{
+                    width: 200px;
+                    height: 200px;
+                }
+                .u-pay-info{
+                    width: 360px;
+                    padding-bottom: 15px;
+                    background: #F5F5F5;
+                    border-radius: 12px;
+                    margin-top: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+                .u-info-text{
+                    font-size: 14px;
+                    line-height: 18px;
+                    font-weight: 500;
+                    color: #666;
+                    text-align: center;
+                    margin-bottom: 10px;
+                    margin-top: 12px;
+                }
+                .u-info-address{
+                    width: 300px;
+                    word-break: break-word;
+                    font-size: 14px;
+                    line-height: 16px;
+                    font-weight: 500;
+                    color: #111;
+                    text-align: center;
+                    margin-bottom: 9px;
+                    cursor: pointer;
+                }
+                .u-info-copy{
+                     font-size: 11px;
+                    line-height: 14px;
+                    font-weight: 400;
+                    color: #999;
+                     text-align: center;
+                }
+                .u-tips-title{
+                    width: 400px;
+                    height: 56px;
+                    color: #111111;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 28px;
+                    text-align: center;
+                    margin-bottom: 33px;
+                }
+                .u-tips-tC{
+                    color: #0B5BF5;
+                    font-size: 16px;
+                }
+                .u-t-title{
+                     font-weight: 500;
+                    font-size: 16px;
+                    line-height: 28px;
+                    color: #666666;
+                    margin-bottom: 10px;
+                }
+                .u-tips-content{
+                    width: 335px;
+                }
+                .u-tips-item{
+                   width: 400px;
+                    word-break: break-word;
+                     font-weight: 500;
+                    font-size: 12px;
+                    line-height: 26px;
+                }
+            }
+                    .buy-u-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 0 47px;
+           color: #666;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+        .buy-u-box a img{
+           width: 8px;
+           height: 14px;
+           margin-left: 8px;
+        }
+        .buy-u-box a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #0B5BF5;
+            text-align: right;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.333px;
+            text-decoration: none;
+            margin-left: 5px;
+            margin-right: 10px;
+        }
+            .remark{
+                font-size: 12px;
+                padding-left: 20px;
+                color: #999;
+
+            }
+            .remark li{
+                line-height: 18px;
+                padding-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+
+<div class="container">
+        <div class="u-pay-box">
+        <div class="u-tips-title">
+
+            Please use a wallet that supports <span class="u-tips-tC">{if $data.chain_type == 1}TRON network (TRX20) {elseif $data.chain_type == 2}Ethereum network (ERC20){elseif $data.chain_type == 4} {else}{/if}</span> to scan the QR code
+        </div>
+        <div class="u-pay-content ">
+
+            <div class="u-top-tip">
+                Please make the transfer amount consistent with the order amount
+            </div>
+
+            <div class="u-count-box">
+                <div class="timer">
+                    <ul class="downcount">
+                        <li>
+                            <span class="hours">00</span>
+                        </li>
+                        <li class="seperator">:</li>
+                        <li>
+                            <span class="minutes">00</span>
+                        </li>
+                        <li class="seperator">:</li>
+                        <li>
+                            <span class="seconds">00</span>
+                        </li>
+                    </ul>
+                </div>
+                <span class="u-count-text">Countdown to order payment</span>
+            </div>
+
+           <div class="amount parse-action" id="copy-amount" data-msg="Amount copied">
+                {$data.pay_usdt} <span class="unit">{if $data.chain_type == 4} {else}USDT{/if}</span>
+            </div>
+            <div class="u-click-copy">
+                Click to copy payment amount
+            </div>
+
+
+            <div class="qrcode">
+                <img src="{$data.img}" class="qrcode-img" alt="qrcode">
+            </div>
+
+            <div class="u-pay-info">
+                <div class="u-info-text">Payment address</div>
+                <div class="address u-info-address parse-action" id="copy-address" data-msg="Address copied">{$data.address}</div>
+                <div class="u-info-copy">Click to copy the address</div>
+            </div>
+
+        </div>
+
+
+        <div class="u-tips-content">
+            <div class="u-t-title">
+                Payment Instructions
+            </div>
+            <div class="u-tips-item">
+                <ol class="remark">
+                    {if $data.chain_type == 4}
+
+                    {else}
+                    <li>
+                        If you use the TP wallet to transfer, please select the currency type as USDT. It is recommended to use exchanges and imtoken transfers.
+                    </li>
+                    {/if}
+                <li>
+                   After the payment is successful, it usually takes about one minute to arrive at the account successfully.
+                </li>
+                <li>
+                   Click the amount and wallet address area to copy directly.
+                </li>
+                <li>
+                    The transfer amount needs to be consistent with the order amount shown above, otherwise the payment will fail.
+                </li>
+            </ol>
+            </div>
+
+        </div>
+    </div>
+     <input type="text" class="parse-content" id="parse-amount" style="position: absolute;top: 9999px;right: 9999px;" value="{$data.pay_usdt}" />
+    <input type="text" class="parse-content" id="parse-address" style="position: absolute;top: 9999px;right: 9999px;" value="{$data.address}" />
+</div>
+<script src="__STATIC__/shouyintai/js/layui.js"></script>
+
+
+    <script>
+        var token = "{$data.merchant_order_sn}";
+        var timeout = "{$data.time_out}";
+        var redirectUrl = "/payment/index/en_order/id/"+"{$data.merchant_order_sn}";
+        layui.use(['table', 'layer', 'laytpl', 'form'], function() {
+    var $ = layui.$
+				,table = layui.table
+				,form = layui.form
+				,layer = layui.layer;
+
+    const address = "{$data.address}"
+     let amount = "{$data.pay_usdt}"
+    const copy = (value)=>{
+        if(navigator.clipboard){
+            navigator.clipboard.writeText(value).then(res=>{
+                layer.msg('Address copied')
+            }).catch(err=>{
+                layer.msg('Address copy error')
+            })
+        }else{
+            const input = document.createElement('input')
+            document.body.appendChild(input)
+            input.setAttribute('value', address)
+            input.select()
+            if (document.execCommand('copy')) {
+            document.execCommand('copy')
+                layer.msg('Address copied')
+            }
+            document.body.removeChild(input)
+        }
+
+
+    }
+    const copyDom = document.querySelector('#copy-address')
+    const copyDom2 = document.querySelector('#copy-amount')
+    copyDom.onclick = ()=>{
+        copy(address);
+    }
+    copyDom2.onclick = ()=>{
+        copy(amount);
+    }
+})
+    </script>
+
+        <script src="__STATIC__/payment/jquery.min.js"></script>
+<script src="__STATIC__/payment/en_main.min.js"></script>
+    </body>
+</html>
+

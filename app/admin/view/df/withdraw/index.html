@@ -1,0 +1,48 @@
+
+<!--replace css-->
+<link rel="stylesheet" href="__STATIC__/admin/css/replaceUI.css" media="all">
+<div class="layuimini-container">
+    <div class="layuimini-main">
+    <fieldset id="searchFieldset_currentTableRenderId" class="table-search-fieldset">
+<legend>条件搜索</legend>
+<form class="layui-form layui-form-pane form-search">
+<div class="layui-form-item layui-inline">
+<label class="layui-form-label" style="color: red;">商户订单号</label>
+<div class="layui-input-inline">
+<input id="c-merchant_withdraw_sn" name="merchant_withdraw_sn" data-search-op="%*%" value="" placeholder="请输入商户订单号" class="layui-input">
+</div>
+</div>
+	 	<div class="layui-form-item layui-inline">
+<label class="layui-form-label">商户名称</label>
+<div class="layui-input-inline">
+<input id="c-merchantname" name="merchantname" data-search-op="%*%" value="" placeholder="请输入申请商户名称" class="layui-input">
+</div>
+</div>	 	<div class="layui-form-item layui-inline">
+<label class="layui-form-label">收款地址</label>
+<div class="layui-input-inline">
+<input id="c-receive_address" name="receive_address" data-search-op="%*%" value="" placeholder="请输入收款地址" class="layui-input">
+</div>
+</div>		<div class="layui-form-item layui-inline">
+<label class="layui-form-label">申请时间</label>
+<div class="layui-input-inline">
+<input id="c-create_time" name="create_time" data-search-op="range" value="" placeholder="请输入申请时间" class="layui-input" lay-key="1">
+</div>
+</div>	<div class="layui-form-item layui-inline">
+<label class="layui-form-label">状态</label>
+<div class="layui-input-inline">
+<select class="layui-select" id="c-status" name="status" data-search-op="=">
+<option value="">- 全部 -</option> 
+<option value="0">处理中</option>/n<option value="1">打款成功</option>/n<option value="2">打款失败</option>/n</select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input status="text" placeholder="- 全部 -" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="" class="layui-select-tips">- 全部 -</dd><dd lay-value="0" class="">处理中</dd><dd lay-value="1" class="">打款成功</dd><dd lay-value="2" class="">打款失败</dd></dl></div>
+</div>
+</div><div class="layui-form-item layui-inline">
+
+</div><div class="layui-form-item layui-inline" style="margin-left: 115px">
+<button type="submit" class="layui-btn layui-btn-normal" data-type="tableSearch" data-table="currentTableRenderId" lay-submit="" lay-filter="currentTableRenderId_filter"> 搜 索</button>
+<button type="reset" class="layui-btn layui-btn-primary" data-table-reset="currentTableRenderId"> 重 置 </button>
+ </div></form></fieldset>
+        <table id="currentTable" class="layui-table layui-hide"
+              
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>

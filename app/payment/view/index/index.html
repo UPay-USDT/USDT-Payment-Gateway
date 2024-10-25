@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,viewport-fit=cover">
+	<title>{:sysconfig('site','site_name')} {:lang('reg_tip 10')}</title>
+<link rel="stylesheet" href="__STATIC__/shouyintai/css/layui.css">
+<link rel="stylesheet" href="__STATIC__/shouyintai/css/global.css">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="__STATIC__/shouyintai/css/header.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/shouyintai/css/public.css" />
+<link rel="stylesheet" href="__STATIC__/shouyintai/css/h5.css" media="screen and (max-width: 568px)">
+<link rel="stylesheet" href="__STATIC__/shouyintai/css/min-foot.css" media="screen and (max-width: 568px)">
+<link rel="stylesheet" type="text/css" href="__STATIC__/shouyintai/css/pc.css"  media="screen and (min-width: 569px)"/>
+<link rel="stylesheet" type="text/css" href="__STATIC__/shouyintai/css/foot.css" media="screen and (min-width: 569px)"/>
+<link rel="stylesheet" href="__STATIC__/shouyintai/css/index.css?v=20200107">
+
+
+	<script src="__STATIC__/shouyintai/js/reconnecting-websocket.js"></script>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/shouyintai/css/blog.css" media="screen and (min-width: 569px)"/>
+	<link rel="stylesheet" href="__STATIC__/shouyintai/css/min-blog.css" media="screen and (max-width: 568px)">
+	<link rel="stylesheet" href="__STATIC__/payment/reIndex.css">
+</head>
+
+
+<body >
+    <div class="phone-modal">
+       <div class="phone-content">
+           <div class="modal-title flex-c-c">
+               {:lang('reg_tip 11')}
+               <img src="__STATIC__/shouyintai/images/close.svg" class="close-img">
+           </div>
+           <div class="modal-item flex-s-c paydemo-type this" code="1" style="border:none;border-top: 1px solid #E3E3E3;">
+               <div class="phone-current-currency">
+					<img src="__STATIC__/shouyintai/images/trc.svg" class="modal-chain-img">
+					<span class="" style="border:none;">USDT ({:lang('reg_tip 12')}-TRC20)</span>
+			    </div>
+               <img src="__STATIC__/shouyintai/images/selected.svg" class="modal-select-img">
+           </div>
+           <div class="modal-item flex-s-c paydemo-type" code="2" style="border:none;border-top: 1px solid #E3E3E3;">
+               <div class="phone-current-currency">
+					<img src="__STATIC__/shouyintai/images/erc.svg" class="modal-chain-img">
+					<span class="" style="border:none;">USDT ({:lang('reg_tip 13')}-ERC20)</span>
+			    </div>
+               <img src="__STATIC__/shouyintai/images/selected.svg" class="modal-select-img">
+           </div>
+
+       </div>
+    </div>
+	<div class="page paydemo" style="margin-top:0px;">
+<script src="__STATIC__/shouyintai/js/layui.js"></script>
+<link rel="stylesheet" type="text/css" href="__STATIC__/shouyintai/css/min-head.css" media="screen and (max-width: 568px)">
+	<div style="display:none" id="formJump"></div>
+	<div class="blog-container" id="container"  >
+
+	    <div class="u-wrapper">
+	        <div class="u-pay-text">
+	            {:sysconfig('site','site_name')} {:lang('reg_tip 10')}
+	        </div>
+	        <div class="u-select-text">
+	            {:lang('reg_tip 11')}
+	        </div>
+	        <div class="paydemo-type-body pc-show">
+				<div class="flex-b-c">
+				    <div class="paydemo-type color-change this" code="1">
+					<img src="__STATIC__/shouyintai/images/trc.svg" class="paydemo-type-img">
+					<div class="color-change u-type-text" style="border:none">
+					    <div>USDT</div>
+					    <div class="u-text-desc">{:lang('reg_tip 12')} (TRC20)</div>
+					</div>
+				</div>
+				<div class="paydemo-type color-change" code="2">
+					<img src="__STATIC__/shouyintai/images/erc.svg" class="paydemo-type-img">
+					<div class="color-change u-type-text" style="border:none">
+					    <div>USDT</div>
+					    <div class="u-text-desc"> {:lang('reg_tip 13')} (ERC20)</div>
+					</div>
+				</div>
+
+				</div>
+			</div>
+			<div class="paydemo-type-body phone-show">
+				<div class="current-currency flex-s-c">
+					<img src="__STATIC__/shouyintai/images/trc.svg" class="paydemo-type-img">
+					<span class="color-change u-type-text" style="border:none;">USDT ({:lang('reg_tip 12')}-TRC20)</span>
+				</div>
+				<img src="__STATIC__/shouyintai/images/down-select.svg" class="down-select-img">
+			</div>
+			<div class="u-paynum-text">
+			   {:lang('reg_tip 14')}  (<span class="currency">USDT</span>)
+			</div>
+			<div class="u-pay-num">
+			    <div class="flex-b-c">
+			        <div class="u-pay-item u-pay-select">1</div>
+			        <div class="u-pay-item">50</div>
+			        <div class="u-pay-item">100 </div>
+			        <div class="u-pay-item">500</div>
+			     </div>
+			       <div style="position:relative">
+			           <input class="u-pay-input u-pay-item" placeholder="{:lang('reg_tip 15')}" name="u-pay-item" type="text">
+			           <span class="currency input-curr">USDT</span>
+			       </div>
+			</div>
+			<div class="paydemo-form-item u-goods-name flex-s-c flex-w">
+				<label>{:lang('reg_tip 16')}：</label><span id="payMchOrderNo" style="margin-right:12px"></span>
+				<span id="randomOrderNo" class="u-refresh-btn flex-s-c">
+				    <img src="__STATIC__/shouyintai/images/refresh.svg" class="refresh-img">
+				{:lang('reg_tip 17')}</span>
+			</div>
+			<div class="u-pay-btn" id="payUSDT">
+			    {:lang('reg_tip 18')} 1 <span class="currency1">USDT</span>
+			</div>
+
+	    </div>
+
+	</div>
+	</div>
+<style>
+    .white-link {
+        text-decoration:none;
+        color:  rgba(255,255,255,0.90)
+    }
+    .white-link:hover{color:#1953ff;}
+</style>
+
+
+<script type="text/html" id="tplStatus">
+	{{#  if(d.order_status == 0){ }}
+	<span class="layui-badge layui-bg-blue">{:lang('reg_tip 19')}</span>
+	{{#  } else if(d.order_status == 1){ }}
+	<span class="layui-badge layui-bg-orange">{:lang('reg_tip 20')}</span>
+	{{#  } else if(d.order_status == 2){ }}
+	<span class="layui-badge layui-bg-green">{:lang('reg_tip 21')}</span>
+	{{#  } else if(d.order_status == 3){ }}
+	<span class="layui-badge layui-bg-black">{:lang('reg_tip 22')}</span>
+	{{#  } else if(d.order_status == 4){ }}
+	<span class="layui-badge layui-bg-black">{:lang('reg_tip 23')}</span>
+	{{#  } else if(d.order_status == 5){ }}
+	<span class="layui-badge layui-bg-red">{:lang('reg_tip 24')}</span>
+	{{#  } else if(d.order_status == 6){ }}
+	<span class="layui-badge layui-bg-cyan">{:lang('reg_tip 25')}</span>
+	{{#  } else if(d.order_status == 7){ }}
+	<span class="layui-badge layui-bg-cyan">{:lang('reg_tip 26')}</span>
+	{{#  } else if(d.order_status == 8){ }}
+	<span class="layui-badge layui-bg-cyan">{:lang('reg_tip 27')}</span>
+	{{#  } else{ }}
+	<span></span>
+	{{#  } }}
+</script>
+<script type="text/html" id="tplPayType">
+	{{#  if(d.chain_type == "1"){ }}
+		<span>{:lang('reg_tip 12')}TRC20</span>
+	{{#  } else if(d.chain_type == "2"){ }}
+		<span>{:lang('reg_tip 13')}ERC20</span>
+	{{#  } else if(d.chain_type == "4"){ }}
+		<span> </span>
+	{{#  } else{ }}
+		<span></span>
+	{{#  } }}
+</script>
+<script type="text/html" id="tplOP">
+	{{#  if(d.userId && d.status == 2){ }}
+	<btn class="layui-btn layui-btn-xs" lay-event="refund">{:lang('reg_tip 28')}</btn>
+	{{#  } else{ }}
+	<btn class="layui-btn layui-btn-xs layui-btn-disabled">{:lang('reg_tip 28')}</btn>
+	{{#  } }}
+</script>
+<script>
+	var usdt_cny="{$usdt_cny}";
+	var usdt_inr="{$usdt_inr}";
+	var usdt_jpy="{$usdt_jpy}";
+	var usdt_krw="{$usdt_krw}";
+	var usdt_php="{$usdt_php}";
+	var usdt_eur="{$usdt_eur}";
+	var usdt_gbp="{$usdt_gbp}";
+	var usdt_chf="{$usdt_chf}";
+	var usdt_twd="{$usdt_twd}";
+	var usdt_hkd="{$usdt_hkd}";
+	var usdt_mop="{$usdt_mop}";
+	var usdt_sgd="{$usdt_sgd}";
+	var usdt_nzd="{$usdt_nzd}";
+	var usdt_thb="{$usdt_thb}";
+	var usdt_cad="{$usdt_cad}";
+	let lang = document.cookie.includes('en-us')?'en':'cn'
+	let obj = {
+	    cn:{
+            'reg_tip29':'支付状态',
+            'reg_tip18':'支付',
+            'reg_tip30':'客户IP',
+            'reg_tip31':'创建时间',
+            'reg_tip32':'自定义金额',
+             'reg_tip14':'支付金额',
+            'reg_tip15':'请输入自定义金额',
+            'reg_tip16':'订单编号',
+            'reg_tip35':'支付方式',
+            'reg_tip72':'收款地址',
+            'reg_tip33':'请输入正确的金额，0-100000之间最多两位小数',
+            'reg_tip34' :'收银台收款',
+            'test1':'请先配置收款地址',
+            'test2':'充值金额不能低于1.00',
+            'test3':'余额不足',
+            'test4':'不能使用收款地址',
+            'test5':'余额不足，不能使用收款地址',
+            'test6':'未找到地址信息',
+	    },
+	    en:{
+	        'reg_tip29':'Payment status',
+            'reg_tip30':'Client IP',
+            'reg_tip18' : 'Pay ',
+            'reg_tip31':'Creation time',
+            'reg_tip14':'Payment Amount',
+            'reg_tip15':'Please enter a custom amount',
+            'reg_tip16':'Transaction ID',
+            'reg_tip35':'Payment method',
+            'reg_tip72':'Receive Wallet Address',
+            'reg_tip32':'Custom amount',
+            'reg_tip33':'Please enter the correct amount, 0-100000 USDT',
+            'reg_tip34' : 'Payment Link',
+            'test1':'Please set up your receiving address first',
+            'test2':'The recharge amount cannot be less than 100.00',
+            'test3':'Insufficient balance',
+            'test4':' Receiving address cannot be used',
+             'test5':'Insufficient balance, cannot use receiving address',
+             'test6':'Address information not found',
+	    }
+	}
+
+	let filterText = (text)=>{
+	    switch (text) {
+	        case '请先配置收款地址':
+	            text = lang === 'en'?obj.en['test1']:obj.cn['test1']
+	            break;
+            case '未找到地址信息':
+	            text = lang === 'en'?obj.en['test6']:obj.cn['test6']
+	            break;
+             case '余额不足，不能收款':
+	            text = lang === 'en'?obj.en['test5']:obj.cn['test5']
+	            break;
+            case '充值金额不能低于1.00':
+	            text = lang === 'en'?obj.en['test2']:obj.cn['test2']
+	            break;
+            case '余额不足':
+	            text = lang === 'en'?obj.en['test3']:obj.cn['test3']
+	            break;
+            case '不能收款':
+	            text = lang === 'en'?obj.en['test4']:obj.cn['test4']
+	            break;
+	        case '支付状态':
+	            text = lang === 'en'?obj.en['reg_tip29']:obj.cn['reg_tip29']
+	            break;
+             case '收银台收款':
+	            text = lang === 'en'?obj.en['reg_tip34']:obj.cn['reg_tip34']
+	            break;
+            case '客户IP':
+	            text = lang === 'en'?obj.en['reg_tip30']:obj.cn['reg_tip30']
+	            break;
+            case '创建时间':
+	            text = lang === 'en'?obj.en['reg_tip31']:obj.cn['reg_tip31']
+	            break;
+            case '支付金额':
+	            text = lang === 'en'?obj.en['reg_tip14']:obj.cn['reg_tip14']
+	            break;
+            case '订单编号':
+	            text = lang === 'en'?obj.en['reg_tip16']:obj.cn['reg_tip16']
+	            break;
+            case '支付方式':
+	            text = lang === 'en'?obj.en['reg_tip35']:obj.cn['reg_tip35']
+	            break;
+            case '收款地址':
+	            text = lang === 'en'?obj.en['reg_tip72']:obj.cn['reg_tip72']
+	            break;
+	            case '自定义金额':
+	            text = lang === 'en'?obj.en['reg_tip32']:obj.cn['reg_tip32']
+	            break;
+             case '请输入正确的金额，0-100000之间最多两位小数':
+	            text = lang === 'en'?obj.en['reg_tip33']:obj.cn['reg_tip33']
+	            break;
+            case '支付':
+	            text = lang === 'en'?obj.en['reg_tip18']:obj.cn['reg_tip18']
+	            break;
+
+	    }
+	    return text
+	}
+	layui.use(['table', 'layer', 'laytpl', 'form'], function() {
+		var $ = layui.$
+				,table = layui.table
+				,form = layui.form
+				,layer = layui.layer;
+
+		var payMchOrderNo = genOrderNo(1000, 9999);
+		$('#payMchOrderNo').text(payMchOrderNo);
+
+
+		// 订单列表
+		table.render({
+			elem: '#PayOrderDemo_dataAll'
+			,url: '/payment/index/list' //列表接口
+			,id: 'tableReload'
+			,page: true
+			,cols: [[
+				{field: 'merchant_order_sn', title:filterText('订单编号') , width: 180}
+				,{field: 'pay_usdt', title: filterText('支付金额'), templet: '<div>{{ d.pay_usdt }} USDT</div>', width: 100}
+				,{field: 'chain_type', title: filterText('支付方式'), templet: '#tplPayType', width: 100}
+				,{field: 'address', title: filterText('收款地址') }
+				,{field: 'order_status', title: filterText('支付状态'), templet: '#tplStatus', width: 100}
+				,{field: 'apply_ip', title: filterText('客户IP'), width: 120}
+				,{field: 'create_time', title: filterText('创建时间'), width: 160}
+
+			]]
+			,skin: 'line'
+		});
+
+		// 刷新
+		$('#refresh').on('click', function() {
+			table.reload('tableReload', {
+				page: {
+					curr: 1 //重新从第 1 页开始
+				}
+			});
+		});
+
+		// 随机金额
+		function randomAmount() {
+			var html = ``;
+			for (let i = 0; i<4; i++) {
+				let randomAmount = mathRandom();
+				html += `
+					<input type="radio" name="amountRadio" value="`+randomAmount+`" title="`+randomAmount+`" lay-filter="amountFilter" />
+				`
+			}
+			$("#paydemo-amount").append(`
+				<input type="radio" name="amountRadio" value="1" title="1" lay-filter="amountFilter" checked />`
+				+ html +
+				`<input type="radio" name="amountRadio" value="-1" title="${filterText('自定义金额')}" lay-filter="amountFilter" />
+			`);
+		}
+		function mathRandom() {
+			return (Math.random()*(1-0.1) + 0.1).toFixed(2);
+		}
+		randomAmount();
+
+		// 监听金额单选框
+		form.on('radio(amountFilter)', function(data){
+
+			var type=$("input[name='amountType']:checked").val();
+
+			if (type==2) {
+				$("#huilv").text(usdt_cny+" CNY");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_cny).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_cny).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_cny).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==3) {
+				$("#huilv").text(usdt_inr+" INR");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_inr).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_inr).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_inr).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==4) {
+				$("#huilv").text(usdt_jpy+" JPY");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_jpy).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_jpy).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_jpy).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==5) {
+				$("#huilv").text(usdt_krw+" KRW");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_krw).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_krw).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_krw).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==1) {
+				$("#huilv").text("1 USD");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text($("#amountInput").val() + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text($("#amountInput").val() + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(data.value + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			// TODO：这里开始
+			if (type==6) {
+				$("#huilv").text(usdt_php+" PHP");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_php).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_php).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_php).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==7) {
+				$("#huilv").text(usdt_eur+" EUR");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_eur).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_eur).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_eur).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==8) {
+				$("#huilv").text(usdt_gbp+" GBP");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_gbp).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_gbp).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_gbp).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==9) {
+				$("#huilv").text(usdt_chf+" CHF");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_chf).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_chf).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_chf).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==10) {
+				$("#huilv").text(usdt_twd+" TWD");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_twd).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_twd).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_twd).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==11) {
+				$("#huilv").text(usdt_hkd+" HKD");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_hkd).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_hkd).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_hkd).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==12) {
+				$("#huilv").text(usdt_mop+" MOP");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_mop).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_mop).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_mop).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==13) {
+				$("#huilv").text(usdt_sgd+" SGD");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_sgd).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_sgd).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_sgd).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==14) {
+				$("#huilv").text(usdt_nzd+" NZD");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_nzd).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_nzd).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_nzd).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==15) {
+				$("#huilv").text(usdt_thb+" THB");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_thb).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_thb).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_thb).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (type==16) {
+				$("#huilv").text(usdt_cad+" CAD");
+				if (data.value === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_cad).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_cad).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((data.value)/usdt_cad).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+
+		});
+
+		// 监听币种单选框
+		form.on('radio(amountTypeFilter)', function(data){
+
+			var cny_type=$("input[name='amountType']:checked").val();
+			var amount_type=$("input[name='amountRadio']:checked").val();
+			 console.log('cny_type',cny_type,'amount_type',amount_type)
+			if (cny_type==2) {
+				$("#huilv").text(usdt_cny+" CNY");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_cny).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_cny).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_cny).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==3) {
+				$("#huilv").text(usdt_inr+" INR");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_inr).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_inr).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_inr).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==4) {
+				$("#huilv").text(usdt_jpy+" JPY");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_jpy).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_jpy).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_jpy).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==5) {
+				$("#huilv").text(usdt_krw+" KRW");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_krw).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_krw).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_krw).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==1) {
+				$("#huilv").text("1 USD");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text($("#amountInput").val() + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text($("#amountInput").val() + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(amount_type + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+
+			if (cny_type==6) {
+				$("#huilv").text(usdt_php+" PHP");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_php).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_php).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_php).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==7) {
+				$("#huilv").text(usdt_eur+" EUR");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_eur).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_eur).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_eur).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==8) {
+				$("#huilv").text(usdt_gbp+" GBP");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_gbp).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_gbp).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_gbp).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==9) {
+				$("#huilv").text(usdt_chf+" CHF");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_chf).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_chf).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_chf).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==10) {
+				$("#huilv").text(usdt_twd+" TWD");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_twd).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_twd).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_twd).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==11) {
+				$("#huilv").text(usdt_hkd+" HKD");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_hkd).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_hkd).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_hkd).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==12) {
+				$("#huilv").text(usdt_mop+" MOP");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_mop).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_mop).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_mop).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==13) {
+				$("#huilv").text(usdt_sgd+" SGD");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_sgd).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_sgd).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_sgd).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==14) {
+				$("#huilv").text(usdt_nzd+" NZD");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_nzd).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_nzd).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_nzd).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==15) {
+				$("#huilv").text(usdt_thb+" THB");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_thb).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_thb).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_thb).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+			if (cny_type==16) {
+				$("#huilv").text(usdt_cad+" CAD");
+				if (amount_type === "-1") {
+					$("#amountShow").text("");
+					$("#amountInput").removeClass("layui-hide").focus();
+					if ($("#amountInput").val()>0) {
+						$("#amountShow").text((($("#amountInput").val())/usdt_cad).toFixed(2) + ' USDT');
+					}
+					$("#amountInput").on('keyup', function () {
+						$("#amountShow").text((($("#amountInput").val())/usdt_cad).toFixed(2) + ' USDT');
+					})
+				} else {
+					$("#amountShow").text(((amount_type)/usdt_cad).toFixed(2) + ' USDT');
+					$("#amountInput").addClass("layui-hide");
+				}
+			}
+
+		});
+
+		//手机端打开弹窗
+		$('.phone-show').click(()=>{
+		    $('.phone-modal').css('display','block')
+		})
+		//手机端关闭弹窗
+		$('.close-img').click(()=>{
+		    $('.phone-modal').css('display','none')
+		})
+
+		// 切换支付方式
+		$(".paydemo-type").click(function () {
+		    //  php 多语言言变量
+		    let reg_12 = "{:lang('reg_tip 12')}"
+		    let reg_13 = "{:lang('reg_tip 13')}"
+		    let reg_42 = "{:lang('reg_tip 42')}"
+		    let reg_43 = "{:lang('reg_tip 43')}"
+
+
+
+
+
+			$(".color-change").removeClass("this");
+            // 			phone
+			$(".modal-item").removeClass("this");
+			$(this).addClass("this");
+
+// 			$(this).find(".color-change").addClass("this");
+			let code = $('.this.paydemo-type').attr('code')
+		    $(`[code="${code}"]`).addClass("this")
+
+		    let html = `
+		        <img src="__STATIC__/shouyintai/images/${code === '1'?'trc.svg':'erc.svg'}" class="paydemo-type-img">
+				<span class="color-change u-type-text" style="border:none;">
+				${code === '1'?
+				'USDT (' + reg_12:code === '2'?'USDT (' + reg_13:''}${code === '1'?'-TRC20'
+				:code === '2'?'-ERC20':''})
+
+				</span>
+
+		    `
+
+
+		  //  buy-u-box
+		    $('.current-currency').html(html)
+
+			$('.phone-modal').css('display','none')
+
+		});
+
+
+		//更改支付金额
+		$(".u-pay-item").click(function () {
+		    let code = $('.this.paydemo-type').attr('code')
+			$(".u-pay-item").removeClass("u-pay-select");
+			$(this).addClass("u-pay-select");
+			let isInput = $(this).hasClass('u-pay-input')
+			let current = document.querySelector('.u-pay-select')
+			$('#payUSDT').text(filterText('支付')+ `${isInput?$('.u-pay-input').val():current.innerText || 0} ${'USDT'}`)
+		});
+		let inputValue = 0;
+
+		//更改支付金额
+		$('input[name="u-pay-item"]').on('input',function () {
+		   let val = $('input[name="u-pay-item"]').val()
+		   let code = $('.this.paydemo-type').attr('code')
+		   let value = Number(val)
+		   if(isNaN(value)){
+		       value = inputValue
+		       $('input[name="u-pay-item"]').val(inputValue)
+		   }else{
+		       if(value > 1000000000){
+		           value = inputValue
+		            $('input[name="u-pay-item"]').val(inputValue)
+		       }else{
+		        inputValue = value
+		       }
+
+		   }
+
+
+
+			$('#payUSDT').text(filterText('支付')+` ${value || 0} 'USDT'}`)
+		});
+
+		$('input[name="u-pay-item"]').on('blur',function () {
+		    let val = $('input[name="u-pay-item"]').val()
+		   let code = $('.this.paydemo-type').attr('code')
+		    let value = Number(val)
+
+		    $('input[name="u-pay-item"]').val(value)
+
+			$('#payUSDT').text(filterText('支付')+` ${value || 0}'USDT'}`)
+		});
+
+
+		//点击【支付】按钮 事件
+// 		form.on('submit(payment)', function(data){
+
+        //new payment
+        $('#payUSDT').click(()=>{
+
+            let chain_type = $('.this.paydemo-type').attr('code')
+            const amount = ($('.u-pay-select').val() || $('.u-pay-select').text() || 0)*1
+            const reg = /^([1-9]\d{0,4}|0)(\.\d{1,2})?$/;
+			if (!amount || !reg.test(amount) || amount <= 0) {
+				layer.msg(filterText('请输入正确的金额，0-100000之间最多两位小数'));
+				return false;
+			}
+
+            var reqData = {};
+			reqData.pay_money = amount;
+			reqData.money_type = '1';
+			reqData.chain_type = chain_type;
+			reqData.order_sn = payMchOrderNo;
+			reqData.product_name = filterText('收银台收款');
+			reqData.merchant_id = "{$merchant_id}";
+			console.log(reqData,'req')
+            // 条码支付方式需弹窗输入条码，其他支付方式直接请求支付接口
+
+			pay(reqData);
+
+        })
+
+		 form.on('submit(payment)', function(data){
+
+			const wayCode = $(".paydemo-type-body").find(".this").eq(0).attr("code");
+
+			const amountRadio = data.field.amountRadio;
+			const type = data.field.amountType;
+			let amount = amountRadio;
+
+			if (amountRadio == "-1") {
+				amount = data.field.amountInput;
+			}
+
+			const reg = /^([1-9]\d{0,4}|0)(\.\d{1,2})?$/;
+			if (!amount || !reg.test(amount) || amount <= 0) {
+				layer.msg(filterText('请输入正确的金额，0-100000之间最多两位小数'));
+				return false;
+			}
+
+			var reqData = {};
+			reqData.pay_money = amount;
+			reqData.money_type = type;
+			reqData.chain_type = wayCode;
+			reqData.order_sn = payMchOrderNo;
+			reqData.product_name = $('#paySubject').text();
+			reqData.merchant_id = "{$merchant_id}";
+			localStorage.setItem('ddd',JSON.stringify(reqData))
+			// 条码支付方式需弹窗输入条码，其他支付方式直接请求支付接口
+			if (wayCode.endsWith("_BAR")) {
+				let wayDesc = wayCode == "WX_BAR" ? "用户微信条码" : wayCode == "ALI_BAR" ? "用户支付宝条码" : "微信或支付宝条码";
+				layer.open({
+					title: "条码支付",
+					type: 1,
+					area: ['350px', '360px'],
+					content: '<div style="padding: 20px;">' +
+							'<div style="padding-bottom: 15px;color: #999999;">请输入'+wayDesc+'：</div>' +
+							'<div style="display: flex;flex-direction: row;justify-content: space-between"><input type="text" id="authCode" value="" class="layui-input" style="font-size: 14px;width: 210px;" /><button class="layui-btn" id="confirmPay" style="background-color: #1953ff;">确认支付</button></div>' +
+							'<div style="padding-top: 15px;color: #999999;">或使用(扫码枪/扫码盒)扫码：</div>' +
+							'<div style="display: flex;flex-direction: row;justify-content: center;padding-top: 20px;"><img src="__STATIC__/shouyintai/images/payType/demo_scan.png" /></div>' +
+							'</div>',
+					success: function(index, layero) {
+						$("#authCode").focus();
+						$("#authCode").blur(function () {
+							$(this).focus();
+						});
+						$('#authCode').bind('keyup', function(event) {
+							if (event.keyCode == "13") { //keyCode=13是回车键
+								$('#confirmPay').click();
+							}
+						});
+						$('#confirmPay').on('click', function () {
+							if (!$('#authCode').val()) {
+								layer.alert('请输入用户条码');
+								return false;
+							}
+							reqData.mchOrderNo = payMchOrderNo;
+							reqData.authCode = $("#authCode").val();
+							pay(reqData);
+						})
+					},
+					cancel: function(index, layero) {
+						updatePayMchOrderNo();
+					}
+				});
+
+			} else {
+				pay(reqData);
+			}
+
+			return false;
+		})
+
+		// 发起支付
+		function pay(reqData) {
+			var loadingIndex = layer.load(1);
+			$.ajax({
+				url: '/payment/index/paydo',
+				data: reqData,
+				type: 'post',
+				success: function (res) {
+				    layer.close(loadingIndex);
+
+					if(res.code == 1) {
+						let data = res.data;
+						let lang = document.cookie.includes('en-us')?'en':'cn'
+						if(data.includes('en_order')){
+						    data = lang === 'en'?data:data.split('en_')[0]+data.split('en_')[1]
+						}else{
+						     data = lang === 'cn'?data:data.split('order')[0] + 'en_order' +data.split('order')[1]
+						}
+
+						updatePayMchOrderNo();
+						window.location.href = data;
+					}else {
+						updatePayMchOrderNo();
+						layer.msg(filterText(res.msg));
+					}
+				}, error: function () {
+                    layer.close(loadingIndex);
+					updatePayMchOrderNo();
+					layer.alert(filterText(res.msg));
+				}
+			});
+		}
+
+
+
+		// H5  hover弹出二维码
+		$(".paydemo-type-h5").hover(function () {
+            $(this).parent().find(".codeImg_wx_h5").removeClass("layui-hide")
+        }, function () {
+            $(this).parent().find(".codeImg_wx_h5").addClass("layui-hide")
+        })
+
+
+		// 随机订单号按钮
+		$("#randomOrderNo").click(function(){
+			updatePayMchOrderNo()
+		})
+
+		// 更新全局变量payMchOrderNo
+		function updatePayMchOrderNo() {
+			payMchOrderNo = genOrderNo(1000, 9999);
+			$('#payMchOrderNo').text(payMchOrderNo);
+		}
+
+		// 生成订单号
+		function genOrderNo(min, max) {
+			return "PO" + new Date().getTime() + Math.floor(Math.random()*(max-min) + min);
+		}
+
+		form.render();
+	})
+</script>
+</body>
+</html>

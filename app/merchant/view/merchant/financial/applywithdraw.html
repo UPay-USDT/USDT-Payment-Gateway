@@ -1,0 +1,68 @@
+   <!--replace css-->
+    <link rel="stylesheet" href="__STATIC__/merchant/css/configUI.css" />
+<div class="layuimini-container">
+
+    
+    <div class="layuimini-main" id="app">
+
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">{:lang('reg_tip68')}</li>
+                
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <form id="app-form" class="layui-form layuimini-form">
+                           <div class="layui-form-item cpt-flex">
+                            <label class="layui-form-label required">{:lang('reg_tip69')}</label>
+                            <div class="layui-input-block select-eth">
+                                <input type="radio" name="chain_type"  value="1" title="{:lang('reg_tip 49')}" checked="">
+                                <input type="radio" name="chain_type"  value="2" title="{:lang('reg_tip 50')}" >
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item cpt-flex" >
+                            <label class="layui-form-label required">{:lang('reg_tip70')}(USDT)</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input"   value="{$row.usdt_balance|default=0}" lay-verify="required" disabled>
+                            </div>
+                        </div>
+                       
+                            <div class="layui-form-item cpt-flex">
+                                <label class="layui-form-label">{:lang('reg_tip71')}</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="money" class="layui-input"  placeholder="{:lang('reg_tip78')}" value=""  lay-verify="required">
+                                </div>
+                            </div>
+                            <div class="layui-form-item cpt-flex">
+                                <label class="layui-form-label">{:lang('reg_tip72')}</label>
+                                <div class="layui-input-block">
+                                <input type="text" name="address" class="layui-input"  lay-verify="required" placeholder="{:lang('reg_tip73')}" value="">
+                                </div>
+                            </div>
+                             
+                           
+                            <div class="layui-form-item text-center">
+                                <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="/merchant.financial/applywithdraw" data-refresh="true">{:lang('reg_tip43')}</button>
+                                <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm reset-bg">{:lang('reg_tip44')}</button>
+                            </div>
+                            
+                             <div class="hr-line"></div>
+    <div class="layui-card">
+                    <div class="layui-card-header"><i class="icon-book-open iconfont" style="margin-right:10px"></i>{:lang('reg_tip59')}</div>
+                    <div class="layui-card-body layui-text layadmin-text">
+                        <p>1. {:lang('reg_tip74')}：{$withdraw_poundage} USDT</p>
+                        <p>2. {:lang('reg_tip75')}：{$erc_withdraw_poundage} USDT</p>
+                        <p>3. {:lang('reg_tip76')}：{$df_min_money} USDT</p>
+                        <p>4. {:lang('reg_tip77')}</p>
+                    </div>
+                </div>
+                        
+                            
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

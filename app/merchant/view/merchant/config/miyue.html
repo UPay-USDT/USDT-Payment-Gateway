@@ -1,0 +1,52 @@
+<style>
+    .reset-bg{
+            background: #f3f4f6!important; 
+            border: none!important;
+            color: #000!important;
+        }
+        .layui-layer-dialog .layui-layer-content{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        }
+         .layui-layer{
+              background: #FFFFFF;
+        border-radius: 20px;
+        overflow: hidden!important;
+        padding: 20px 30px 10px;
+    } 
+</style>
+<form id="app-form" class="layui-form layuimini-form">
+
+   
+        <div class="layui-form-item cpt-flex" >
+            <label class="layui-form-label required">{:lang('reg_tip93')}</label>
+            <div class="layui-input-block">
+                <input type="password" class="layui-input"   value="11111111" lay-verify="required" disabled>
+            </div>
+        </div>
+        <div class="layui-form-item cpt-flex" >
+            <label class="layui-form-label required">{:lang('reg_tip94')}</label>
+            <div class="layui-input-block">
+                <input type="password" class="layui-input"   value="1111111111111111" lay-verify="required" disabled>
+            </div>
+        </div>
+         
+
+        
+        <div class="hr-line"></div>
+    <div class="layui-card">
+                    <div class="layui-card-header"><i class="icon-book-open iconfont" style="margin-right:10px"></i>{:lang('reg_tip59')}</div>
+                    <div class="layui-card-body layui-text layadmin-text">
+                        <p>1.{:lang('reg_tip95')}</p>
+                        <p>2.{:lang('reg_tip96')}</p>
+                    </div>
+                </div>
+    <div class="hr-line"></div>
+    <div class="layui-form-item text-center">
+        <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="merchant.config/miyue?type=1" data-refresh="false">{:lang('reg_tip97')}</button>
+        <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm reset-bg" lay-submit="merchant.config/miyue?type=2" data-refresh="false">{:lang('reg_tip98')}</button>
+         
+    </div>
+
+</form>

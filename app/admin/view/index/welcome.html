@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+   <style>
+       .top-panel {
+            border: 1px solid #eceff9;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .top-panel > .layui-card-body{
+            height: 60px;
+        }
+        .top-panel-number{
+            line-height:60px;
+            font-size: 30px;
+            border-right:1px solid #eceff9;
+        }
+        .top-panel-tips{
+            line-height:30px;
+            font-size: 12px
+        }
+
+        .layuimini-main{
+            border: none;
+            background: #f8f8f8!important;
+        }
+        .top-panel-number{
+            border: none;
+        }
+        .list-item{
+            border-radius: 20px!important;
+            overflow: hidden!important;
+            /*box-shadow: ;*/
+        }
+        .table-box{
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+        }
+
+        .layui-card{
+             border-radius: 10px!important;
+        }
+    </style>
+</head>
+<body>
+<div class="layuimini-main">
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-xs12 layui-col-md4">
+
+            <div class="layui-card top-panel">
+                <div class="layui-card-header">总交易金额</div>
+                <div class="layui-card-body">
+                    <div class="layui-row layui-col-space5">
+                        <div class="top-panel-number">
+                            {$sum.pay_usdt}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="layui-col-xs12 layui-col-md4">
+
+            <div class="layui-card top-panel">
+                <div class="layui-card-header">总商户手续费</div>
+                <div class="layui-card-body">
+                    <div class="layui-row layui-col-space5">
+                        <div class="top-panel-number">
+                            {$sum.poundage_usdt}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="layui-col-xs12 layui-col-md4">
+
+            <div class="layui-card top-panel">
+                <div class="layui-card-header">平台总收入</div>
+                <div class="layui-card-body">
+                    <div class="layui-row layui-col-space5">
+                        <div class="top-panel-number">
+                            {$sum.plat_money}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-xs12 layui-col-md4">
+
+            <div class="layui-card top-panel">
+                <div class="layui-card-header">今日交易金额</div>
+                <div class="layui-card-body">
+                    <div class="layui-row layui-col-space5">
+                        <div class="top-panel-number">
+                            {$sum.today_pay_usdt}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="layui-col-xs12 layui-col-md4">
+
+            <div class="layui-card top-panel">
+                <div class="layui-card-header">今日商户手续费</div>
+                <div class="layui-card-body">
+                    <div class="layui-row layui-col-space5">
+                        <div class="top-panel-number">
+                            {$sum.today_poundage_usdt}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="layui-col-xs12 layui-col-md4">
+
+            <div class="layui-card top-panel">
+                <div class="layui-card-header">今日平台收入</div>
+                <div class="layui-card-body">
+                    <div class="layui-row layui-col-space5">
+                        <div class="top-panel-number">
+                            {$sum.today_plat_money}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="layui-row layui-col-space15">
+ <div class="layui-col-md12">
+                        <div class="layui-card">
+                            <div class="layui-card-body">
+                                <div id="echarts-records" style="width: 100%;min-height:500px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+</div>
+<script type="text/javascript">
+    var chart_time={$chart_time};
+    var chart_order={$chart_order};
+</script>
+</body>
+</html>

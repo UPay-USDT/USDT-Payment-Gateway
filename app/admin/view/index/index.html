@@ -1,0 +1,262 @@
+<link rel="stylesheet" href="__STATIC__/plugs/lay-module/layuimini/layuimini.css?v={:time()}" media="all">
+<link rel="stylesheet" href="__STATIC__/plugs/lay-module/layuimini/themes/default.css?v={:time()}" media="all">
+
+<style id="layuimini-bg-color">
+/*头部右侧背景色 headerRightBg */
+/*头部右侧背景色 headerRightBg */
+.layui-layout-admin .layui-header {
+  background-color: #2D8CF0 !important;
+}
+
+/*头部右侧选中背景色 headerRightBgThis */
+.layui-layout-admin .layui-header .layuimini-header-content > ul > .layui-nav-item.layui-this, .layuimini-tool i:hover {
+    background-color: #0069b7 !important;
+}
+
+/*头部右侧字体颜色 headerRightColor */
+.layui-layout-admin .layui-header .layui-nav .layui-nav-item a {
+    color:  rgba(255,255,255,.7);
+}
+/**头部右侧下拉字体颜色 headerRightChildColor */
+.layui-layout-admin .layui-header .layui-nav .layui-nav-item .layui-nav-child a {
+    color:  #676767!important;
+}
+
+/*头部右侧鼠标选中 headerRightColorThis */
+.layui-header .layuimini-menu-header-pc.layui-nav .layui-nav-item a:hover, .layui-header .layuimini-header-menu.layuimini-pc-show.layui-nav .layui-this a {
+    color: #ffffff !important;
+}
+
+/*头部右侧更多下拉颜色 headerRightNavMore */
+.layui-header .layui-nav .layui-nav-more {
+    border-top-color: rgba(255,255,255,.7) !important;
+}
+
+/*头部右侧更多下拉颜色 headerRightNavMore */
+.layui-header .layui-nav .layui-nav-mored, .layui-header .layui-nav-itemed > a .layui-nav-more {
+    border-color: transparent transparent rgba(255,255,255,.7) !important;
+}
+
+/**头部右侧更多下拉配置色 headerRightNavMoreBg headerRightNavMoreColor */
+.layui-header .layui-nav .layui-nav-child dd.layui-this a, .layui-header .layui-nav-child dd.layui-this, .layui-layout-admin .layui-header .layui-nav .layui-nav-item .layui-nav-child .layui-this a {
+    background-color: #0069b7 !important;
+    color:#ffffff !important;
+}
+
+/*头部缩放按钮样式 headerRightToolColor */
+.layui-layout-admin .layui-header .layuimini-tool i {
+    color: #bbe3df;
+}
+
+/*logo背景颜色 headerLogoBg */
+.layui-layout-admin .layuimini-logo {
+    background-color: #fff !important;
+}
+
+/*logo字体颜色 headerLogoColor */
+.layui-layout-admin .layuimini-logo h1 {
+    color: #8995A1;
+}
+
+/*左侧菜单更多下拉样式 leftMenuNavMore */
+.layuimini-menu-left .layui-nav .layui-nav-more,.layuimini-menu-left-zoom.layui-nav .layui-nav-more {
+    border-top-color: rgb(191, 187, 187);
+}
+
+/*左侧菜单更多下拉样式 leftMenuNavMore */
+.layuimini-menu-left .layui-nav .layui-nav-mored, .layuimini-menu-left .layui-nav-itemed > a .layui-nav-more,   .layuimini-menu-left-zoom.layui-nav .layui-nav-mored, .layuimini-menu-left-zoom.layui-nav-itemed > a .layui-nav-more {
+    border-color: transparent transparent  rgb(191, 187, 187) !important;
+}
+
+/*左侧菜单背景 leftMenuBg */
+.layui-side.layui-bg-black, .layui-side.layui-bg-black > .layuimini-menu-left > ul, .layuimini-menu-left-zoom > ul {
+    background-color:  #fff !important;
+}
+
+/*左侧菜单选中背景 leftMenuBgThis */
+.layuimini-menu-left .layui-nav-tree .layui-this, .layuimini-menu-left .layui-nav-tree .layui-this > a, .layuimini-menu-left .layui-nav-tree .layui-nav-child dd.layui-this, .layuimini-menu-left .layui-nav-tree .layui-nav-child dd.layui-this a, .layuimini-menu-left-zoom.layui-nav-tree .layui-this, .layuimini-menu-left-zoom.layui-nav-tree .layui-this > a, .layuimini-menu-left-zoom.layui-nav-tree .layui-nav-child dd.layui-this, .layuimini-menu-left-zoom.layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #00af90 !important
+}
+
+
+/*左侧菜单子菜单大小 */
+.layui-nav-tree .layui-nav-item {
+
+    /*width: 192px!important;*/
+    /*margin-left: 12px;*/
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.layui-layout-admin .layui-side{
+    width: 216px!important;
+    padding-left: 6px;
+}
+.layui-body{
+    left: 216px;
+}
+.layui-layout-admin .layui-logo{
+    width: 216px;
+}
+
+.layuimini-menu-left .layui-nav .layui-nav-item a:hover{
+    color: #444!important;
+}
+
+.layuimini-menu-left .layui-nav .layui-nav-item.layui-this a:hover{
+    color: #fff!important;
+}
+
+
+/*左侧菜单子菜单背景 leftMenuChildBg */
+.layuimini-menu-left .layui-nav-itemed > .layui-nav-child{
+    background-color: rgba(0,0,0,.3) !important;
+}
+
+/*左侧菜单字体颜色 leftMenuColor */
+.layuimini-menu-left .layui-nav .layui-nav-item a, .layuimini-menu-left-zoom.layui-nav .layui-nav-item a {
+    color:  #8995A1 !important;
+}
+
+/*左侧菜单选中字体颜色 leftMenuColorThis */
+ .layuimini-menu-left .layui-nav .layui-this a, .layuimini-menu-left-zoom.layui-nav .layui-this a {
+    color:#F3F4F6 !important;
+}
+
+/**tab选项卡选中颜色 tabActiveColor */
+.layuimini-tab .layui-tab-title .layui-this .layuimini-tab-active {
+    background-color: #2d8cf0;
+}
+
+.layui-layout-admin .layui-header{
+    background: #fff!important;
+}
+
+.layui-layout-admin .layui-header .layui-nav .layui-nav-item a{
+    color: #000;
+}
+
+.fa{
+    font: normal normal normal 18px/1 FontAwesome;
+}
+
+.layuimini-tab .layui-tab-content{
+    margin: 20px 30px 0 20px!important;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+html, body{
+    background: #f8f8f8!important;
+}
+
+.layuimini-container .layui-btn-sm i{
+    font-size: 18px!important;
+}
+
+.layui-layout-admin .layui-header .layuimini-header-content > ul > .layui-nav-item.layui-this, .layuimini-tool i:hover{
+    background: #00af90!important;
+}
+.layuimini-header-menu > .layui-nav-item:hover{
+    background: #00af90!important;
+    color: #fff!important;
+}
+
+
+    .layuimini-menu-left .layui-nav-item a .fa, .layuimini-menu-left .layui-nav-item a .layui-icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+    }
+    .layuimini-menu-left .layui-nav .layui-nav-item a, .layuimini-menu-left-zoom.layui-nav .layui-nav-item a{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+</style>
+<body class="layui-layout-body layuimini-all">
+<div class="layui-layout layui-layout-admin">
+
+    <div class="layui-header header">
+        <div class="layui-logo layuimini-logo"></div>
+
+        <div class="layuimini-header-content">
+            <a>
+                <div class="layuimini-tool"><i title="展开" style="color:#8995A1" class="fa fa-outdent" data-side-fold="1"></i></div>
+            </a>
+
+            <!--电脑端头部菜单-->
+            <ul class="layui-nav layui-layout-left layuimini-header-menu layuimini-menu-header-pc layuimini-pc-show">
+            </ul>
+
+            <!--手机端头部菜单-->
+            <ul class="layui-nav layui-layout-left layuimini-header-menu layuimini-mobile-show">
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><i class="fa fa-list-ul"></i> 选择模块</a>
+                    <dl class="layui-nav-child layuimini-menu-header-mobile">
+                    </dl>
+                </li>
+            </ul>
+
+            <ul class="layui-nav layui-layout-right">
+
+
+                <li class="layui-nav-item layuimini-setting">
+                    <a href="javascript:;">
+
+                        <img src="__STATIC__/admin/images/avatar.jpg" alt="" class="layui-nav-img" width="50" height="50"/>
+                        <cite class="adminName">{:session('admin.username')}</cite>
+                        <span class="layui-nav-more"></span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a href="javascript:;" layuimini-content-href="{:__url('index/editAdmin')}" data-title="基本资料" data-icon="fa fa-gears">基本资料<span class="layui-badge-dot"></span></a>
+                        </dd>
+                        <dd>
+                            <a href="javascript:;" layuimini-content-href="{:__url('index/editPassword')}" data-title="修改密码" data-icon="fa fa-gears">修改密码</a>
+                        </dd>
+                        <dd>
+                            <hr>
+                        </dd>
+                        <dd>
+                            <a href="javascript:;" class="login-out">退出登录</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layuimini-select-bgcolor" lay-unselect style="width: 30px">
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--无限极左侧菜单-->
+    <div class="layui-side layui-bg-black layuimini-menu-left">
+    </div>
+
+    <!--初始化加载层-->
+    <div class="layuimini-loader">
+        <div class="layuimini-loader-inner"></div>
+    </div>
+
+    <!--手机端遮罩层-->
+    <div class="layuimini-make"></div>
+
+    <!-- 移动导航 -->
+    <div class="layuimini-site-mobile"><i class="layui-icon"></i></div>
+
+    <div class="layui-body">
+        <div class="layuimini-tab layui-tab-rollTool layui-tab" lay-filter="layuiminiTab" lay-allowclose="true">
+            <ul class="layui-tab-title" style="display:none">
+                <li class="layui-this" id="layuiminiHomeTabId" lay-id=""></li>
+            </ul>
+
+            <div class="layui-tab-content">
+                <div id="layuiminiHomeTabIframe" class="layui-tab-item layui-show"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

@@ -1,0 +1,170 @@
+.layui-input-block{
+            margin-left: 0;
+        }
+        .layuimini-form {
+            margin-top: 0;
+        }
+        .layui-input-block{
+            margin-bottom: 20px;
+        }
+        .layui-form-label{
+            text-align: left;
+            padding: 9px 0;
+        }
+        .layuimini-form > .layui-form-item .required:after{
+            right: 0px;
+            content: '*';
+            position: relative;
+            top: 0;
+        }
+         .layui-form-pane .layui-form-label {
+            width: 170px;
+        }
+        .layui-input, .layui-select, .layui-textarea{
+            width: 700px;
+            height: 50px;
+            background: #F3F4F6;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+            
+            color: #263237;
+        }
+        .cpt-flex{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .text-center{
+            text-align: left;
+            
+        }
+       .layui-btn-sm{
+            margin-bottom: 40px;
+            width: 120px;
+            height: 50px;
+            background: #1d6aff;
+            border-radius: 10.5263px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            text-align: center;
+            
+            color: #FFFFFF;
+        }
+        
+        .layui-card-header{
+            border: none;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            
+            color: #263237;
+        }
+        .layui-text{
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 180%;
+            /* or 25px */
+            
+            
+            color: #898989;
+        }
+        
+        .layui-tab-title{
+            height: 24px;
+        }
+        
+        .layui-form-label{
+             font-weight: 600;
+            font-size: 16px;
+            line-height: 22px;
+            
+            color: #263237;
+   
+        }
+        
+        .layui-form-label{
+            width: 300px;
+        }
+        .layui-form-item{
+            margin-bottom: 0;
+        }
+        
+        .reset-bg{
+          background: #F3F4F6!important;  
+          color: #263237;
+          border: none;
+        }
+        
+         .layui-layer-easy .layui-layer-setwin .layui-layer-close1:after{
+        content: '\e672';
+        font-family: "iconfont" !important;
+        font-weight: 400!important;
+          font-size: 30px;
+          font-style: normal;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .layuimini-form > .layui-form-item > .layui-input-block tip, .layuimini-form > .layui-form-item > .layui-inline tip{
+        font-size: 12px;
+        display: block;
+    }
+    
+    .layui-form-checked[lay-skin=primary] i{
+        background: #1d6aff!important;
+        border: none!important;
+    }
+      /*dialoa error ui*/
+    .layui-layer-dialog .layui-layer-content{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: left;
+       
+        }
+    .layui-layer{
+        background: #FFFFFF;
+        border-radius: 20px;
+        overflow: hidden!important;
+        padding: 20px;
+         border: none!important;
+        box-sizing: border-box;
+    }
+    .layui-form-radio>i:hover, .layui-form-radioed>i{
+        color: #1d6aff;
+    }
+   /*.layui-layer-easy .layui-layer-title{*/
+   /*    display: none;*/
+   /*}*/
+    .layui-layer-easy .layui-layer-btn{
+        justify-content: space-between;
+    }
+    .layui-layer-btn a{
+        margin: 0;
+    }
+     .layui-layer-dialog .layui-layer-content{
+        /*display: flex;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+        flex-wrap: wrap;
+        padding: 20px 20px 20px 60px;
+        word-break: normal;
+        text-align: left;
+    }
+    .layui-layer-dialog .layui-layer-content .layui-layer-ico{
+        position: absolute;
+        margin-top: -16px;
+        top: 50%;
+        left: 20px;
+    }
+    /*.layui-form-select .layui-edge{*/
+    /*    right: -15px;*/
+    /*    top: 73%;*/
+    /*}*/
+    /*.layui-form-select dl{*/
+    /*    top: 89px;*/
+    /*     min-height: 200px;*/
+    /*}*/

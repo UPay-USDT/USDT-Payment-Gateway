@@ -1,0 +1,484 @@
+ .layuimini-container{
+        padding-bottom: 40px!important;
+    }
+.layui-layer-easy .layui-layer-setwin .layui-layer-close1:after{
+        content: '\e672';
+        font-family: "iconfont" !important;
+        font-weight: 400!important;
+          font-size: 24px;
+          font-style: normal;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+    }
+    .layuimini-container{
+        padding: 0;
+    }
+    .layuimini-main{
+        padding: 0;
+    }
+    .layuimini-container .layui-table-box{
+        border: none;
+    }
+    .layui-table-view .layui-table td, .layui-table-view .layui-table th{
+        padding: 15px 0;
+    }
+    .layuimini-container .layui-table-box .layui-table-header th{
+        font-weight: 500!important;
+        font-size: 14px;
+        line-height: 20px!important;
+        /* identical to box height */
+        
+        text-align: center;
+        
+        color: #898989!important;
+    }
+    .layui-table{
+        font-weight: 600;
+        line-height: 18px;
+        text-align: center;
+        color: #263237;
+
+    }
+    
+    .layui-table td, .layui-table th{
+       font-size: 12px;
+    }
+    .layui-table-page .layui-laypage .layui-laypage-prev{
+        margin-left: 14px!important;
+        width: 30px!important;
+    }
+    .layui-table-page .layui-laypage .layui-laypage-next{
+        width: 30px!important;
+    }
+    .layuimini-container .layui-laypage .layui-laypage-curr .layui-laypage-em{
+        background: #00af90!important;
+        border-radius: 5px!important;
+    }
+    
+    .layui-table-page .layui-laypage a, .layui-table-page .layui-laypage span{
+        padding: 0 20px;
+    }
+    
+    .layui-laypage-skip{
+        display: none!important;
+    }
+    
+    .layui-table-page .layui-laypage a, .layui-table-page .layui-laypage span{
+        min-width: 30px;
+        height: 30px;
+        background: #EDF0F3;
+        border-radius: 5px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 6px;
+    }
+    .layui-laypage-default{
+        display: flex ;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .layui-laypage a, .layui-laypage span{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        /* identical to box height */
+        
+        text-align: center;
+
+        color: #898989;
+    }
+    .layui-flow-more a *, .layui-laypage input, .layui-table-view select[lay-ignore]{
+       color: #898989;
+    }
+    .layui-layer-easy .layui-layer-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        height: 60px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        color: #263237!important;
+        background: #fff!important;
+    }
+    
+
+    .layui-layer-easy .layui-layer-btn a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 50px;
+        
+        background: #F3F4F6;
+        border-radius: 10px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        
+        color: #263237!important;
+    }
+    .layui-layer-easy .layui-layer-btn .layui-layer-btn0{
+        width: 120px;
+        height: 50px;
+        color: #fff;
+        background: #1D6AFF;
+        border-radius: 10.5263px;
+        color: #fff!important;
+    }
+    .layui-layer-easy .layui-layer-btn{
+        padding: 0 17px 37px!important;
+        display: flex;
+        background: #fff;
+       
+    }
+ 
+
+    .layui-layer-easy .layui-layer-setwin > a:after{
+        color: #263237;
+        font-weight: 900;
+        font-size: 30px;
+         top: 8px;
+        right: 2px;
+    }
+    
+    .layui-layer-easy .layui-layer-setwin .layui-layer-max{
+        display: none!important;
+    }
+    
+    .layui-layer-easy .layui-layer-setwin .layui-layer-min{
+        display: none!important;
+    }
+    
+    
+    
+    /**/
+    .layui-table-tool-panel{
+        padding: 20px 10px;
+        background: #FFFFFF;
+        box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    .layui-table-tool-panel li{
+        margin-bottom: 10px;
+    }
+    .layui-form-checkbox[lay-skin=primary] span{
+         font-weight: 500;
+        font-size: 12px;
+        line-height: 17px;
+        color: #263237;
+    }
+    
+    .layui-form-checked[lay-skin=primary] i{
+        background: #1D6AFF;
+    }
+    
+    /*qqq btn*/
+    .layuimini-container .layui-btn-sm i{
+    font-size: 18px!important;
+    }
+    .layuimini-container .layui-form-onswitch{
+         background: #00af90;
+         border-color: #00af90;
+    }
+    
+    .layuimini-container .layui-btn-success {
+        width: 40px;
+        height: 26px;
+        background: #FFAC4B;
+        border-radius: 4px;
+      
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 26px;
+        /* identical to box height */
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .layui-btn-normal{
+        width: 66px;
+        height: 26px;
+        background: #00AF90;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 12px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .layuimini-container .layui-btn-danger{
+        width: 40px;
+        height: 26px;
+        background: #F53C4B;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 26px!important;
+        /* identical to box height */
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .layuimini-container .layui-table-cell{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .layui-table-tool-temp{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    
+    
+        /*qqq btn*/
+    .layuimini-container .layui-btn-sm i{
+                font-size: 16px!important;
+    }
+    .layuimini-container .layui-table-tool .layui-btn + .layui-btn{
+        background: #00af90;
+        border-radius: 10px;
+        min-width: 72px;
+        height: 36px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        
+        color: #FFFFFF;
+    }
+    
+    
+        /*icon*/
+    .layui-table-tool .layui-inline[lay-event]{
+        border: none;
+        width: 38px;
+        height: 38px;
+        background: #e0f5f2;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+    
+    .layui-icon-cols:before{
+        content: '\e955';
+        color: #00AF90!important;
+        font-family: "iconfont" !important;
+          font-size: 16px;
+          font-style: normal;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+    }
+    .layui-table-tool .layui-inline[lay-event]:hover{
+        border: none;
+    }
+    
+    .layui-icon-print:before{
+        content: '\e612';
+        color: #00AF90!important;
+        font-family: "iconfont" !important;
+        font-size: 20px!important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+     .layui-icon-export:before{
+        content: '\e747';
+        color: #00AF90!important;
+        font-family: "iconfont" !important;
+        font-size: 18px!important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .layui-icon-search:before{
+        content: '\e82e';
+        color:#00AF90!important;
+        font-family: "iconfont" !important;
+          font-size: 16px;
+          font-style: normal;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+         
+    }
+    .layuimini-container .layui-table-tool-self {
+        right: 20px;
+    }
+    .layuimini-container .layuimini-btn-primary{
+        background: #425579;
+        border-radius: 10px;
+        width: 38px;
+        height: 38px;
+    }
+    .layui-table-tool-temp  {
+        padding-left: 20px;
+    }
+    /*qqq search*/
+    .table-search-fieldset .layui-form-item{
+        box-sizing: border-box;
+        border-radius: 10px;
+        border: 1px solid #00af90;
+        overflow: hidden;
+    }
+    .table-search-fieldset .layui-form-item:last-child{
+        border-radius: 0;
+        border: none;
+        overflow: hidden;
+        margin-left: 5px!important;
+        
+    }
+    .layui-btn-xs{
+            line-height:26px
+        }
+    
+    .form-search .layui-form-label{
+        height: 36px;
+        line-height: 36px;
+        background: #00af90;
+        color: #fff!important;
+        border: none;
+    }
+    .form-search .layui-input-inline input, .form-search .layui-input-inline select{
+         height: 36px;
+        line-height: 36px;
+    }
+    .layui-input, .layui-select, .layui-textarea{
+        border: none;
+    }
+    .form-search .layui-btn{
+        background: #00af90;
+        border-radius: 10px;
+        width: 72px;
+        height: 36px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .form-search button[type=reset]{
+        background: #F3F4F6!important;
+        color: #263237;
+        border: none;
+    }
+    .layui-layer-easy .layui-layer-btn .layui-layer-btn0{
+        background: #00af90!important;
+        border: none;
+    }
+    .layui-form-checked[lay-skin=primary] i{
+        background: #00af90;
+    }
+
+      .table-search-fieldset .layui-form-item{
+        overflow: visible;
+    }
+    .layuimini-container .layui-form-select dl dd.layui-this{
+        background: #00af90!important;
+    }
+    .form-search .layui-form-label{
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+    .top-statics{
+        display: flex;
+        justify-content:flex-start;
+        flex-wrap: wrap;
+        background: #f3f4f6;
+        border-radius: 10px;
+        margin: 30px;
+        box-sizing: border-box;
+        padding: 14px 20px 0 14px;
+    }
+    .top-item{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        margin-right: 40px;
+        color: #000000;
+        padding-bottom: 14px;
+    }
+    .top-theme-color{
+        color: #00AF90;
+        margin-left: 10px;
+    }
+    
+      /*dialoa error ui*/
+    .layui-layer-dialog .layui-layer-content{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        }
+    .layui-layer{
+        background: #FFFFFF;
+        border-radius: 20px;
+        overflow: hidden!important;
+        padding: 20px 10px 10px 30px;
+        box-sizing: border-box;
+    }
+     /*delete checkbox border*/
+    .layui-form-checked[lay-skin=primary] i {
+        border: none!important;
+    }
+    /*delete select page num bg*/
+    .layui-laypage select{
+        border: none!important;
+        background: #edf0f3!important;
+        
+    }
+    
+   /*  .layui-layer-easy .layui-layer-title{*/
+   /*    display: none;*/
+   /*}*/
+    .layui-layer-easy .layui-layer-btn{
+        justify-content: space-between;
+    }
+    .layui-layer-btn a{
+        margin: 0;
+    }
+ .layui-layer-dialog .layui-layer-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 20px 30px 20px;
+    }
+    .layui-layer-dialog .layui-layer-content .layui-layer-ico{
+        position: relative;
+        margin-right: 20px;
+        top: 0;
+        right: 0;
+    }
+    /*    .layui-form-select .layui-edge{*/
+    /*    right: -15px;*/
+    /*    top: 73%;*/
+    /*}*/
+    
+    .layui-table-cell .layui-form-checkbox[lay-skin=primary]{
+        top: 0;
+    }
+        legend {
+        padding-top: 20px;
+    }
+    .layuimini-container .table-search-fieldset{
+        border: none;
+    }
+    
+    .layui-table-tips-main{
+        margin: 0!important;
+    }
+    
+    .layui-layer-photos.layui-layer{
+        padding: 0;
+    }

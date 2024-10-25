@@ -1,0 +1,28 @@
+{
+  "name": "comely-io/data-types",
+  "description": "PHP data types",
+  "type": "library",
+  "homepage": "https://github.com/comely-io/data-types",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Furqan A. Siddiqui",
+      "email": "hello@furqansiddiqui.com",
+      "homepage": "https://www.furqansiddiqui.com",
+      "role": "Author"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "ext-bcmath": "*",
+    "ext-mbstring": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Comely\\DataTypes\\": [
+        "src"
+      ]
+    }
+  },
+  "minimum-stability": "dev"
+}
